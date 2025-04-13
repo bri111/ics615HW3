@@ -1,0 +1,341 @@
+Run started:2025-04-13 08:20:55.020145
+
+Test results:
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b104_hardcoded_bind_all_interfaces.html
+   Location: cloned_repos/project4/demo_viser.py:66:36
+65	
+66	    server = viser.ViserServer(host="0.0.0.0", port=port)
+67	    server.gui.configure_theme(titlebar_content=None, control_layout="collapsible")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/dpt_head.py:157:8
+156	        # Otherwise, process frames in chunks to manage memory usage
+157	        assert frames_chunk_size > 0
+158	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/track_modules/base_track_predictor.py:91:8
+90	
+91	        assert D == 2, "Input points must be 2D coordinates"
+92	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/track_modules/blocks.py:87:12
+86	            )
+87	            assert len(self.time_blocks) >= len(self.space_virtual2point_blocks)
+88	        self.initialize_weights()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/track_modules/utils.py:57:4
+56	    """
+57	    assert embed_dim % 2 == 0
+58	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/track_modules/utils.py:78:4
+77	    """
+78	    assert embed_dim % 2 == 0
+79	    omega = torch.arange(embed_dim // 2, dtype=torch.double)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/track_modules/utils.py:106:4
+105	    B, N, D = xy.shape
+106	    assert D == 2
+107	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/track_modules/utils.py:177:4
+176	
+177	    assert len(sizes) in [2, 3]
+178	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/utils.py:23:4
+22	    H, W, grid_dim = pos_grid.shape
+23	    assert grid_dim == 2
+24	    pos_flat = pos_grid.reshape(-1, grid_dim)  # Flatten to (H*W, 2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/heads/utils.py:47:4
+46	    """
+47	    assert embed_dim % 2 == 0
+48	    omega = torch.arange(embed_dim // 2, dtype=torch.double, device=pos.device)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/attention.py:36:8
+35	        super().__init__()
+36	        assert dim % num_heads == 0, "dim should be divisible by num_heads"
+37	        self.num_heads = num_heads
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/attention.py:82:8
+81	    def forward(self, x: Tensor, attn_bias=None, pos=None) -> Tensor:
+82	        assert pos is None
+83	        if not XFORMERS_AVAILABLE:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/block.py:215:8
+214	        """
+215	        assert isinstance(self.attn, MemEffAttention)
+216	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/patch_embed.py:18:8
+17	    if isinstance(x, tuple):
+18	        assert len(x) == 2
+19	        return x
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/patch_embed.py:21:4
+20	
+21	    assert isinstance(x, int)
+22	    return (x, x)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/patch_embed.py:72:8
+71	
+72	        assert H % patch_H == 0, f"Input image height {H} is not a multiple of patch height {patch_H}"
+73	        assert W % patch_W == 0, f"Input image width {W} is not a multiple of patch width: {patch_W}"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/patch_embed.py:73:8
+72	        assert H % patch_H == 0, f"Input image height {H} is not a multiple of patch height {patch_H}"
+73	        assert W % patch_W == 0, f"Input image width {W} is not a multiple of patch width: {patch_W}"
+74	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/rope.py:170:8
+169	        # Validate inputs
+170	        assert tokens.size(-1) % 2 == 0, "Feature dimension must be even"
+171	        assert positions.ndim == 3 and positions.shape[-1] == 2, "Positions must have shape (batch_size, n_tokens, 2)"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/rope.py:171:8
+170	        assert tokens.size(-1) % 2 == 0, "Feature dimension must be even"
+171	        assert positions.ndim == 3 and positions.shape[-1] == 2, "Positions must have shape (batch_size, n_tokens, 2)"
+172	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/vision_transformer.py:114:8
+113	        self.pos_embed = nn.Parameter(torch.zeros(1, num_patches + self.num_tokens, embed_dim))
+114	        assert num_register_tokens >= 0
+115	        self.register_tokens = (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/vision_transformer.py:196:8
+195	        M = int(math.sqrt(N))  # Recover the number of patches in each dimension
+196	        assert N == M * M
+197	        kwargs = {}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/vision_transformer.py:213:8
+212	        )
+213	        assert (w0, h0) == patch_pos_embed.shape[-2:]
+214	        patch_pos_embed = patch_pos_embed.permute(0, 2, 3, 1).view(1, -1, dim)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/vision_transformer.py:292:8
+291	                output.append(x)
+292	        assert len(output) == len(blocks_to_take), f"only {len(output)} / {len(blocks_to_take)} blocks found"
+293	        return output
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/layers/vision_transformer.py:306:8
+305	                i += 1
+306	        assert len(output) == len(blocks_to_take), f"only {len(output)} / {len(blocks_to_take)} blocks found"
+307	        return output
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/utils/geometry.py:96:4
+95	    H, W = depth_map.shape
+96	    assert intrinsic.shape == (3, 3), "Intrinsic matrix must be 3x3"
+97	    assert intrinsic[0, 1] == 0 and intrinsic[1, 0] == 0, "Intrinsic matrix must have zero skew"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/vggt/utils/geometry.py:97:4
+96	    assert intrinsic.shape == (3, 3), "Intrinsic matrix must be 3x3"
+97	    assert intrinsic[0, 1] == 0 and intrinsic[1, 0] == 0, "Intrinsic matrix must have zero skew"
+98	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project4/vggt_to_colmap.py:113:19
+112	    try:
+113	        response = requests.get(url, allow_redirects=False)
+114	        response.raise_for_status() 
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project4/vggt_to_colmap.py:118:23
+117	            redirect_url = response.headers["Location"]
+118	            response = requests.get(redirect_url, stream=True)
+119	            response.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project4/vggt_to_colmap.py:121:23
+120	        else:
+121	            response = requests.get(url, stream=True)
+122	            response.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project4/visual_util.py:384:4
+383	
+384	    assert mask_filename is not None
+385	    image = cv2.imread(image_path)
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project4/visual_util.py:445:19
+444	        # Get the redirect URL
+445	        response = requests.get(url, allow_redirects=False)
+446	        response.raise_for_status()  # Raise HTTPError for bad requests (4xx or 5xx)
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project4/visual_util.py:450:23
+449	            redirect_url = response.headers["Location"]
+450	            response = requests.get(redirect_url, stream=True)
+451	            response.raise_for_status()
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 4713
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 26
+		Medium: 6
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 5
+		Medium: 1
+		High: 26
+Files skipped (0):

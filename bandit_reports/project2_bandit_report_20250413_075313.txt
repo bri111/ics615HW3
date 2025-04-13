@@ -1,0 +1,1329 @@
+Run started:2025-04-13 07:53:16.936160
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/bridge/bridgev2_utils.py:108:4
+107	    """
+108	    assert isinstance(resize_size, tuple)
+109	    # Resize to image size expected by model
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/bridge/bridgev2_utils.py:120:4
+119	    """Extracts image from observations and preprocesses it."""
+120	    assert isinstance(resize_size, int) or isinstance(resize_size, tuple)
+121	    if isinstance(resize_size, int):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/bridge/run_bridgev2_eval.py:83:4
+82	def eval_model_in_bridge_env(cfg: GenerateConfig) -> None:
+83	    assert cfg.pretrained_checkpoint is not None, "cfg.pretrained_checkpoint must not be None!"
+84	    assert not cfg.center_crop, "`center_crop` should be disabled for Bridge evaluations!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/bridge/run_bridgev2_eval.py:84:4
+83	    assert cfg.pretrained_checkpoint is not None, "cfg.pretrained_checkpoint must not be None!"
+84	    assert not cfg.center_crop, "`center_crop` should be disabled for Bridge evaluations!"
+85	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/bridge/widowx_env.py:22:4
+21	    """
+22	    assert len(xyz_coor) == 3
+23	    DEFAULT_ROTATION = np.array([[0, 0, 1.0], [0, 1.0, 0], [-1.0, 0, 0]])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/libero/libero_utils.py:40:4
+39	    """
+40	    assert isinstance(resize_size, tuple)
+41	    # Resize to image size expected by model
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/libero/libero_utils.py:52:4
+51	    """Extracts image from observations and preprocesses it."""
+52	    assert isinstance(resize_size, int) or isinstance(resize_size, tuple)
+53	    if isinstance(resize_size, int):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/libero/regenerate_libero_dataset.py:105:8
+104	        orig_data_path = os.path.join(args.libero_raw_data_dir, f"{task.name}_demo.hdf5")
+105	        assert os.path.exists(orig_data_path), f"Cannot find raw data file {orig_data_path}."
+106	        orig_data_file = h5py.File(orig_data_path, "r")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/libero/regenerate_libero_dataset.py:184:16
+183	                rewards[-1] = 1
+184	                assert len(actions) == len(agentview_images)
+185	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/libero/run_libero_eval.py:92:4
+91	def eval_libero(cfg: GenerateConfig) -> None:
+92	    assert cfg.pretrained_checkpoint is not None, "cfg.pretrained_checkpoint must not be None!"
+93	    if "image_aug" in cfg.pretrained_checkpoint:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/libero/run_libero_eval.py:94:8
+93	    if "image_aug" in cfg.pretrained_checkpoint:
+94	        assert cfg.center_crop, "Expecting `center_crop==True` because model was trained with image augmentations!"
+95	    assert not (cfg.load_in_8bit and cfg.load_in_4bit), "Cannot use both 8-bit and 4-bit quantization!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/libero/run_libero_eval.py:95:4
+94	        assert cfg.center_crop, "Expecting `center_crop==True` because model was trained with image augmentations!"
+95	    assert not (cfg.load_in_8bit and cfg.load_in_4bit), "Cannot use both 8-bit and 4-bit quantization!"
+96	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/libero/run_libero_eval.py:112:8
+111	            cfg.unnorm_key = f"{cfg.unnorm_key}_no_noops"
+112	        assert cfg.unnorm_key in model.norm_stats, f"Action un-norm key {cfg.unnorm_key} not found in VLA `norm_stats`!"
+113	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/openvla_utils.py:94:4
+93	    # Convert from 3D Tensor (H, W, C) to 4D Tensor (batch_size, H, W, C)
+94	    assert image.shape.ndims == 3 or image.shape.ndims == 4
+95	    expanded_dims = False
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/experiments/robot/robot_utils.py:69:8
+68	        )
+69	        assert action.shape == (ACTION_DIM,)
+70	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:77:8
+76	        #               Hardcodes `get_intermediate_layers` to return the **SECOND-TO-LAST** layer patches!
+77	        assert len(timm_model_ids) <= 2, "Prismatic models only support up to 2 (fused) vision backbones!"
+78	        self.featurizer = timm.create_model(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:326:12
+325	        if input_ids.shape[1] == 1:
+326	            assert input_ids.shape[0] == 1, "Generation is only currently supported for batch size of 1!"
+327	            assert past_key_values is not None, "You must provide `past_key_values` during cached generation!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:327:12
+326	            assert input_ids.shape[0] == 1, "Generation is only currently supported for batch size of 1!"
+327	            assert past_key_values is not None, "You must provide `past_key_values` during cached generation!"
+328	            assert labels is None, "Unexpected key `labels` provided during cached generation!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:328:12
+327	            assert past_key_values is not None, "You must provide `past_key_values` during cached generation!"
+328	            assert labels is None, "Unexpected key `labels` provided during cached generation!"
+329	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:345:12
+344	        elif pixel_values is None:
+345	            assert (input_ids is not None) and (inputs_embeds is None), "Missing `input_ids` in language-only forward!"
+346	            assert past_key_values is None, "Unexpected key `past_key_values` provided during language-only forward!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:346:12
+345	            assert (input_ids is not None) and (inputs_embeds is None), "Missing `input_ids` in language-only forward!"
+346	            assert past_key_values is None, "Unexpected key `past_key_values` provided during language-only forward!"
+347	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:363:12
+362	        elif (input_ids.shape[0] == pixel_values.shape[0]) or (inputs_embeds.shape[0] == pixel_values.shape[0]):
+363	            assert past_key_values is None, "Unexpected key `past_key_values` provided during language-only forward!"
+364	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:541:12
+540	        if unnorm_key is None:
+541	            assert len(norm_stats) == 1, (
+542	                f"Your model was trained on more than one dataset, "
+543	                f"please pass a `unnorm_key` from the following options to choose the statistics "
+544	                f"used for un-normalizing actions: {norm_stats.keys()}"
+545	            )
+546	            unnorm_key = next(iter(norm_stats.keys()))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/extern/hf/modeling_prismatic.py:548:8
+547	
+548	        assert unnorm_key in norm_stats, (
+549	            f"The `unnorm_key` you chose is not in the set of available dataset statistics, "
+550	            f"please choose from: {norm_stats.keys()}"
+551	        )
+552	        return unnorm_key
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/llm/base_llm.py:175:8
+174	        # Note =>> this assert should hold for all Llama-derived tokenizers (`LlamaTokenizerFast` ==> includes Mistral!
+175	        assert (self.tokenizer("Test 123", add_special_tokens=True).input_ids[0] == self.tokenizer.bos_token_id) and (
+176	            self.tokenizer("Test 123", add_special_tokens=False).input_ids[0] != self.tokenizer.bos_token_id
+177	        ), (
+178	            f"Default Tokenizer of type `{type(self.tokenizer)}` does not automatically prefix inputs with BOS token!\n"
+179	            "Please read the comment in `base_llm.py` for more information!"
+180	        )
+181	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/llm/prompting/base_prompter.py:43:8
+42	    def add_turn(self, role: str, message: str) -> str:
+43	        assert (role == "human") if (self.turn_count % 2 == 0) else (role == "gpt")
+44	        message = message.replace("<image>", "").strip()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/llm/prompting/llama2_chat_prompter.py:51:8
+50	    def add_turn(self, role: str, message: str) -> str:
+51	        assert (role == "human") if (self.turn_count % 2 == 0) else (role == "gpt")
+52	        message = message.replace("<image>", "").strip()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/llm/prompting/mistral_instruct_prompter.py:30:8
+29	    def add_turn(self, role: str, message: str) -> str:
+30	        assert (role == "human") if (self.turn_count % 2 == 0) else (role == "gpt")
+31	        message = message.replace("<image>", "").strip()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/llm/prompting/phi_prompter.py:32:8
+31	    def add_turn(self, role: str, message: str) -> str:
+32	        assert (role == "human") if (self.turn_count % 2 == 0) else (role == "gpt")
+33	        message = message.replace("<image>", "").strip()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/llm/prompting/vicuna_v15_prompter.py:42:8
+41	    def add_turn(self, role: str, message: str) -> str:
+42	        assert (role == "human") if (self.turn_count % 2 == 0) else (role == "gpt")
+43	        message = message.replace("<image>", "").strip()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/base_vision.py:131:8
+130	        # Validation =>> for now, this class *only* supports TIMM Vision Transformers (but can be extended!)
+131	        assert isinstance(self.featurizer, VisionTransformer), (
+132	            "Featurizer is not a TIMM VisionTransformer; if you would like to support a new visual representation, "
+133	            "file an issue or implement the requisite logic (see `prismatic/models/backbones/vision/base_vision.py`)!"
+134	        )
+135	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/base_vision.py:145:12
+144	        if "siglip" in self.timm_path_or_url or "in1k" in self.timm_path_or_url:
+145	            assert isinstance(default_image_transform, Compose), "Unexpected `default_image_transform`!"
+146	            assert isinstance(default_image_transform.transforms[0], Resize)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/base_vision.py:146:12
+145	            assert isinstance(default_image_transform, Compose), "Unexpected `default_image_transform`!"
+146	            assert isinstance(default_image_transform.transforms[0], Resize)
+147	            default_image_transform = Compose(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/base_vision.py:156:12
+155	        if self.image_resize_strategy == "resize-naive":
+156	            assert isinstance(default_image_transform, Compose), "Unexpected `default_image_transform`!"
+157	            assert isinstance(default_image_transform.transforms[0], Resize)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/base_vision.py:157:12
+156	            assert isinstance(default_image_transform, Compose), "Unexpected `default_image_transform`!"
+157	            assert isinstance(default_image_transform.transforms[0], Resize)
+158	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/base_vision.py:171:12
+170	        elif self.image_resize_strategy == "letterbox":
+171	            assert isinstance(default_image_transform, Compose), "Unexpected `default_image_transform`!"
+172	            assert "mean" in self.data_cfg, "TIMM `data_cfg` missing image normalization mean!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/base_vision.py:172:12
+171	            assert isinstance(default_image_transform, Compose), "Unexpected `default_image_transform`!"
+172	            assert "mean" in self.data_cfg, "TIMM `data_cfg` missing image normalization mean!"
+173	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinoclip_vit.py:77:12
+76	        if self.image_resize_strategy == "resize-naive":
+77	            assert isinstance(default_dino_transform, Compose), "Unexpected `default_dino_image_transform`!"
+78	            assert isinstance(default_clip_transform, Compose), "Unexpected `default_clip_image_transform`!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinoclip_vit.py:78:12
+77	            assert isinstance(default_dino_transform, Compose), "Unexpected `default_dino_image_transform`!"
+78	            assert isinstance(default_clip_transform, Compose), "Unexpected `default_clip_image_transform`!"
+79	            assert isinstance(default_dino_transform.transforms[0], Resize)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinoclip_vit.py:79:12
+78	            assert isinstance(default_clip_transform, Compose), "Unexpected `default_clip_image_transform`!"
+79	            assert isinstance(default_dino_transform.transforms[0], Resize)
+80	            assert isinstance(default_clip_transform.transforms[0], Resize)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinoclip_vit.py:80:12
+79	            assert isinstance(default_dino_transform.transforms[0], Resize)
+80	            assert isinstance(default_clip_transform.transforms[0], Resize)
+81	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinoclip_vit.py:102:12
+101	        elif self.image_resize_strategy == "letterbox":
+102	            assert isinstance(default_dino_transform, Compose), "Unexpected `default_dino_transform`!"
+103	            assert isinstance(default_clip_transform, Compose), "Unexpected `default_clip_transform`!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinoclip_vit.py:103:12
+102	            assert isinstance(default_dino_transform, Compose), "Unexpected `default_dino_transform`!"
+103	            assert isinstance(default_clip_transform, Compose), "Unexpected `default_clip_transform`!"
+104	            assert "mean" in self.dino_data_cfg and "mean" in self.clip_data_cfg, "DinoCLIP `data_cfg` missing `mean`!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinoclip_vit.py:104:12
+103	            assert isinstance(default_clip_transform, Compose), "Unexpected `default_clip_transform`!"
+104	            assert "mean" in self.dino_data_cfg and "mean" in self.clip_data_cfg, "DinoCLIP `data_cfg` missing `mean`!"
+105	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinoclip_vit.py:142:8
+141	    def num_patches(self) -> int:
+142	        assert self.dino_featurizer.patch_embed.num_patches == self.clip_featurizer.patch_embed.num_patches
+143	        return self.dino_featurizer.patch_embed.num_patches
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:82:8
+81	        # Fix =>> SigLIP default transform resizes to *larger* than `self.default_image_size` (crops image)!!
+82	        assert isinstance(default_siglip_transform, Compose), "Unexpected `default_image_transform`!"
+83	        assert isinstance(default_siglip_transform.transforms[0], Resize)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:83:8
+82	        assert isinstance(default_siglip_transform, Compose), "Unexpected `default_image_transform`!"
+83	        assert isinstance(default_siglip_transform.transforms[0], Resize)
+84	        default_siglip_transform = Compose(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:92:12
+91	        if self.image_resize_strategy == "resize-naive":
+92	            assert isinstance(default_dino_transform, Compose), "Unexpected `default_dino_image_transform`!"
+93	            assert isinstance(default_siglip_transform, Compose), "Unexpected `default_siglip_image_transform`!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:93:12
+92	            assert isinstance(default_dino_transform, Compose), "Unexpected `default_dino_image_transform`!"
+93	            assert isinstance(default_siglip_transform, Compose), "Unexpected `default_siglip_image_transform`!"
+94	            assert isinstance(default_dino_transform.transforms[0], Resize)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:94:12
+93	            assert isinstance(default_siglip_transform, Compose), "Unexpected `default_siglip_image_transform`!"
+94	            assert isinstance(default_dino_transform.transforms[0], Resize)
+95	            assert isinstance(default_siglip_transform.transforms[0], Resize)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:95:12
+94	            assert isinstance(default_dino_transform.transforms[0], Resize)
+95	            assert isinstance(default_siglip_transform.transforms[0], Resize)
+96	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:117:12
+116	        elif self.image_resize_strategy == "letterbox":
+117	            assert isinstance(default_dino_transform, Compose), "Unexpected `default_dino_transform`!"
+118	            assert isinstance(default_siglip_transform, Compose), "Unexpected `default_siglip_transform`!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:118:12
+117	            assert isinstance(default_dino_transform, Compose), "Unexpected `default_dino_transform`!"
+118	            assert isinstance(default_siglip_transform, Compose), "Unexpected `default_siglip_transform`!"
+119	            assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:119:12
+118	            assert isinstance(default_siglip_transform, Compose), "Unexpected `default_siglip_transform`!"
+119	            assert (
+120	                "mean" in self.dino_data_cfg and "mean" in self.siglip_data_cfg
+121	            ), "DinoSigLIP `data_cfg` missing `mean`!"
+122	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/backbones/vision/dinosiglip_vit.py:159:8
+158	    def num_patches(self) -> int:
+159	        assert self.dino_featurizer.patch_embed.num_patches == self.siglip_featurizer.patch_embed.num_patches
+160	        return self.dino_featurizer.patch_embed.num_patches
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/load.py:64:8
+63	        config_json, checkpoint_pt = run_dir / "config.json", run_dir / "checkpoints" / "latest-checkpoint.pt"
+64	        assert config_json.exists(), f"Missing `config.json` for `{run_dir = }`"
+65	        assert checkpoint_pt.exists(), f"Missing checkpoint for `{run_dir = }`"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/load.py:65:8
+64	        assert config_json.exists(), f"Missing `config.json` for `{run_dir = }`"
+65	        assert checkpoint_pt.exists(), f"Missing checkpoint for `{run_dir = }`"
+66	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/load.py:138:8
+137	        # [Validate] Checkpoint Path should look like `.../<RUN_ID>/checkpoints/<CHECKPOINT_PATH>.pt`
+138	        assert (checkpoint_pt.suffix == ".pt") and (checkpoint_pt.parent.name == "checkpoints"), "Invalid checkpoint!"
+139	        run_dir = checkpoint_pt.parents[1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/load.py:143:8
+142	        config_json, dataset_statistics_json = run_dir / "config.json", run_dir / "dataset_statistics.json"
+143	        assert config_json.exists(), f"Missing `config.json` for `{run_dir = }`"
+144	        assert dataset_statistics_json.exists(), f"Missing `dataset_statistics.json` for `{run_dir = }`"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/load.py:144:8
+143	        assert config_json.exists(), f"Missing `config.json` for `{run_dir = }`"
+144	        assert dataset_statistics_json.exists(), f"Missing `dataset_statistics.json` for `{run_dir = }`"
+145	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/vlas/openvla.py:108:12
+107	        if unnorm_key is None:
+108	            assert len(norm_stats) == 1, (
+109	                f"Your model was trained on more than one dataset, please pass a `unnorm_key` from the following "
+110	                f"options to choose the statistics used for un-normalizing actions: {norm_stats.keys()}"
+111	            )
+112	            unnorm_key = next(iter(norm_stats.keys()))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/vlas/openvla.py:115:8
+114	        # Error Handling
+115	        assert (
+116	            unnorm_key in norm_stats
+117	        ), f"The `unnorm_key` you chose is not in the set of available statistics; choose from: {norm_stats.keys()}"
+118	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/vlms/prismatic.py:82:12
+81	            token_idx_list = self.llm_backbone.tokenizer.encode(trigger_string, add_special_tokens=False)
+82	            assert len(token_idx_list) == 1, f'String "{trigger_string}" is tokenized as more than one token!'
+83	            self.string2idx[trigger_string] = token_idx_list[0]
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project2/prismatic/models/vlms/prismatic.py:108:27
+107	        # Load from Checkpoint (Custom --> should load both *projector* and *llm* weights)
+108	        model_state_dict = torch.load(pretrained_checkpoint, map_location="cpu")["model"]
+109	        assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/vlms/prismatic.py:109:8
+108	        model_state_dict = torch.load(pretrained_checkpoint, map_location="cpu")["model"]
+109	        assert (
+110	            "projector" in model_state_dict and "llm_backbone" in model_state_dict
+111	        ), "PrismaticVLM `from_pretrained` expects checkpoint with keys for `projector` AND `llm_backbone`!"
+112	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/vlms/prismatic.py:245:8
+244	        """Load weights from checkpoint (if required by the given stage)."""
+245	        assert stage in {"align", "finetune", "full-finetune"}, f"Stage {stage} is not supported!"
+246	
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project2/prismatic/models/vlms/prismatic.py:265:31
+264	            overwatch.info(f"Loading from Provided Checkpoint `{pretrained_checkpoint}`", ctx_level=1)
+265	            model_state_dict = torch.load(pretrained_checkpoint)["model"]
+266	            self.projector.load_state_dict(model_state_dict["projector"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/models/vlms/prismatic.py:277:8
+276	        ]
+277	        assert len(align_dirs) == 1, "Multiple or No Valid Pretrained Directories Exist -- Double Check `runs`!"
+278	        if (pretrained_checkpoint := (align_dirs[0] / "checkpoints" / "latest-checkpoint.pt")).exists():
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project2/prismatic/models/vlms/prismatic.py:280:31
+279	            overwatch.info(f"Loading from Discovered Checkpoint `{pretrained_checkpoint}`", ctx_level=1)
+280	            model_state_dict = torch.load(pretrained_checkpoint)["model"]
+281	            self.projector.load_state_dict(model_state_dict["projector"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/preprocessing/datasets/datasets.py:69:8
+68	        image_path, conversation = Path(self.examples[idx]["image"]), self.examples[idx]["conversations"]
+69	        assert (len(conversation) == 2) and ("<image>" not in conversation[-1]["value"]), "Unexpected text!"
+70	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project2/prismatic/preprocessing/download.py:134:15
+133	    # Otherwise --> fire an HTTP Request, with `stream = True`
+134	    response = requests.get(url, stream=True)
+135	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/preprocessing/download.py:160:4
+159	    """Utility function for extracting compressed archives, with a handy Rich-based progress bar."""
+160	    assert archive_path.suffix == ".zip", "Only `.zip` compressed archives are supported for now!"
+161	    overwatch.info(f"Extracting {archive_path.name} to `{download_dir}`", ctx_level=1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/preprocessing/download.py:176:16
+175	            if extract_type == "file":
+176	                assert len(members) == 1, f"Archive `{archive_path}` with extract type `{extract_type} has > 1 member!"
+177	            elif extract_type == "directory":
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/base_strategy.py:82:8
+81	        # Lightweight Validation
+82	        assert (
+83	            self.global_batch_size % self.per_device_batch_size == 0
+84	        ), "Per-device batch size must evenly divide global batch size!"
+85	        self.grad_accumulation_steps = self.global_batch_size // self.per_device_batch_size // overwatch.world_size()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/base_strategy.py:87:12
+86	        if self.enable_mixed_precision_training:
+87	            assert self.mixed_precision_dtype == torch.bfloat16, "Only BF16 mixed precision training is supported!"
+88	            assert check_bloat16_supported(), "BFloat16 is not supported on this hardware; unset `mixed_precision`"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/base_strategy.py:88:12
+87	            assert self.mixed_precision_dtype == torch.bfloat16, "Only BF16 mixed precision training is supported!"
+88	            assert check_bloat16_supported(), "BFloat16 is not supported on this hardware; unset `mixed_precision`"
+89	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/base_strategy.py:255:8
+254	        """Run the VLA training loop for the given `dataset` and `collator`; log losses, action metrics to `metrics`."""
+255	        assert isinstance(vla_dataset, IterableDataset), "VLA training expects an IterableDataset!"
+256	        assert self.grad_accumulation_steps == 1, "VLA training does not support gradient accumulation!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/base_strategy.py:256:8
+255	        assert isinstance(vla_dataset, IterableDataset), "VLA training expects an IterableDataset!"
+256	        assert self.grad_accumulation_steps == 1, "VLA training does not support gradient accumulation!"
+257	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/ddp.py:35:8
+34	        """Save a checkpoint to the `run_dir` only containing the state_dicts for trainable parameters by default."""
+35	        assert isinstance(self.vlm, DDP), "save_checkpoint assumes VLM is already wrapped in DDP!"
+36	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/ddp.py:94:12
+93	
+94	            assert self.weight_decay == 0, "DDP training does not currently support `weight_decay` > 0!"
+95	            self.optimizer = AdamW(trainable_params, lr=self.learning_rate, weight_decay=self.weight_decay)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/ddp.py:103:12
+102	
+103	            assert self.weight_decay == 0, "DDP training does not currently support `weight_decay` > 0!"
+104	            self.optimizer = AdamW(trainable_params, lr=self.learning_rate, weight_decay=self.weight_decay)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/fsdp.py:91:8
+90	
+91	        assert state_dict_type == StateDictType.FULL_STATE_DICT, "Sharded state saving is not yet implemented!"
+92	        self.fsdp_state_dict_type = state_dict_type
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/training/strategies/fsdp.py:104:8
+103	        """Save a checkpoint to the `run_dir` only containing the state_dicts for trainable parameters by default."""
+104	        assert isinstance(self.vlm, FSDP), "FSDPStrategy.save_checkpoint assumes VLM is already wrapped in FSDP!"
+105	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/util/batching_utils.py:44:8
+43	        # For our purposes, `drop_last` is always False!
+44	        assert not self.drop_last, "SplitModalitySampler must set `drop_last = False`!"
+45	        self.total_size = math.ceil(len(self.dataset) / self.global_batch_size) * self.global_batch_size
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/util/batching_utils.py:51:8
+50	        """Re-indexes a batch in a way that is conducive to DistributedSampler + grouping by seqlen per rank."""
+51	        assert len(batch_idxs) % n_buckets == 0, "Batch length is not divisible by `num_replicas`!"
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/util/batching_utils.py:191:8
+190	        indices = self.get_modality_and_length_grouped_indices(g)
+191	        assert len(set(indices)) == len(self.modality_lengths) == len(self.dataset), "Oops!"
+192	        assert (len(indices) % self.global_batch_size == 0) and (len(indices) % self.num_replicas) == 0, "Oops"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/util/batching_utils.py:192:8
+191	        assert len(set(indices)) == len(self.modality_lengths) == len(self.dataset), "Oops!"
+192	        assert (len(indices) % self.global_batch_size == 0) and (len(indices) % self.num_replicas) == 0, "Oops"
+193	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/util/data_utils.py:111:8
+110	        #   => Handle padding via RNN Utils => `pad_sequence`
+111	        assert self.padding_side == "right", f"Invalid Tokenizer `{self.padding_side = }`"
+112	        input_ids = pad_sequence(input_ids, batch_first=True, padding_value=self.pad_token_id)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/util/data_utils.py:122:8
+121	        # [Contract] For VLA Training =>> No "Unimodal" Data!
+122	        assert all([pv is not None for pv in pixel_values]), "Invalid VLA Example with `pixel_values = None`!"
+123	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/util/torch_utils.py:32:4
+31	    """Sets seed for all randomness libraries (mostly random, numpy, torch) and produces a `worker_init_fn`"""
+32	    assert np.iinfo(np.uint32).min < seed < np.iinfo(np.uint32).max, "Seed outside the np.uint32 bounds!"
+33	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/vla/datasets/datasets.py:162:8
+161	        per_dataset_kwargs = rlds_config["dataset_kwargs_list"]
+162	        assert len(per_dataset_kwargs) == 1, "Only support single-dataset `mixes` for episodic datasets."
+163	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/vla/datasets/rlds/utils/data_utils.py:306:4
+305	
+306	    assert np.all(weights >= 0), "Weights must be non-negative"
+307	    assert len(weights) <= n, "Number of threads must be at least as large as length of weights"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/prismatic/vla/datasets/rlds/utils/data_utils.py:307:4
+306	    assert np.all(weights >= 0), "Weights must be non-negative"
+307	    assert len(weights) <= n, "Number of threads must be at least as large as length of weights"
+308	    weights = np.array(weights) / np.sum(weights)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/additional-datasets/lrv_instruct.py:74:8
+73	        image_id = example["image_id"]
+74	        assert (VG_IMG_DIR / f"{image_id}.jpg").exists(), f"Missing Image `{image_id}.jpg`"
+75	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/additional-datasets/lrv_instruct.py:83:8
+82	        image_path = example["image_id"]
+83	        assert (CHART_IMG_DIR / image_path).exists(), f"Missing Image `{image_path}`"
+84	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/additional-datasets/lvis_instruct_4v.py:58:8
+57	        image_path = example["image"]
+58	        assert (DOWNLOAD_DIR / image_path).exists(), f"Missing Image `{image_path}`"
+59	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:95:4
+94	    # Iterate through Vision Backbone =>> add "vision_backbone." prefix
+95	    assert len(vision_backbone_state_dicts) <= 2, "Prismatic models only support up to 2 (fused) vision backbones!"
+96	    for idx, vision_backbone_state_dict in enumerate(vision_backbone_state_dicts):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:114:8
+113	
+114	        assert config_json.exists(), f"Missing `config.json` for `{run_dir = }`"
+115	        assert checkpoint_pt.exists(), f"Missing checkpoint for `{run_dir = }`"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:115:8
+114	        assert config_json.exists(), f"Missing `config.json` for `{run_dir = }`"
+115	        assert checkpoint_pt.exists(), f"Missing checkpoint for `{run_dir = }`"
+116	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:145:4
+144	    tokenizer.init_kwargs.pop("add_prefix_space", None)  # Pop to prevent unnecessary warning on reload...
+145	    assert tokenizer.pad_token_id == hf_config.pad_token_id, "Incorrect Pad Token ID!"
+146	    assert len(tokenizer) > hf_config.text_config.vocab_size, "Tokenizer vocabulary must be larger than LLM vocabulary!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:146:4
+145	    assert tokenizer.pad_token_id == hf_config.pad_token_id, "Incorrect Pad Token ID!"
+146	    assert len(tokenizer) > hf_config.text_config.vocab_size, "Tokenizer vocabulary must be larger than LLM vocabulary!"
+147	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:152:4
+151	    hf_config.text_config.torch_dtype = torch.bfloat16
+152	    assert hf_config.text_config.use_cache, "LLM config `use_cache` should be True for inference (set default)!"
+153	
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:196:23
+195	    print("[*] Loading Prismatic VLM State Dictionary from Checkpoint")
+196	    model_state_dict = torch.load(checkpoint_pt, map_location="cpu")["model"]
+197	    assert ("downsampler" not in model_state_dict) or (len(model_state_dict["downsampler"]) == 0), "Downsampler?"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:197:4
+196	    model_state_dict = torch.load(checkpoint_pt, map_location="cpu")["model"]
+197	    assert ("downsampler" not in model_state_dict) or (len(model_state_dict["downsampler"]) == 0), "Downsampler?"
+198	    assert ("projector" in model_state_dict) and ("llm_backbone" in model_state_dict), "Missing keys!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/scripts/extern/convert_prismatic_weights_to_hf.py:198:4
+197	    assert ("downsampler" not in model_state_dict) or (len(model_state_dict["downsampler"]) == 0), "Downsampler?"
+198	    assert ("projector" in model_state_dict) and ("llm_backbone" in model_state_dict), "Missing keys!"
+199	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project2/scripts/extern/verify_prismatic.py:96:23
+95	    # Iterate over Sample Prompts =>> Generate
+96	    image = Image.open(requests.get(DEFAULT_IMAGE_URL, stream=True).raw).convert("RGB")
+97	    num_tokens, total_time = 0, 0.0
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project2/scripts/generate.py:63:23
+62	    # Initial Setup
+63	    image = Image.open(requests.get(DEFAULT_IMAGE_URL, stream=True).raw).convert("RGB")
+64	    prompt_builder = vlm.get_prompt_builder()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project2/scripts/generate.py:89:31
+88	            url = input("\n|=>> Enter Image URL: ")
+89	            image = Image.open(requests.get(url, stream=True).raw).convert("RGB")
+90	            prompt_builder = vlm.get_prompt_builder(system_prompt=system_prompt)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/deploy.py:95:16
+94	                # Support cases where `json_numpy` is hard to install, and numpy arrays are "double-encoded" as strings
+95	                assert len(payload.keys()) == 1, "Only uses encoded payload!"
+96	                payload = json.loads(payload["encoded"])
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b104_hardcoded_bind_all_interfaces.html
+   Location: cloned_repos/project2/vla-scripts/deploy.py:120:30
+119	
+120	    def run(self, host: str = "0.0.0.0", port: int = 8000) -> None:
+121	        self.app = FastAPI()
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b104_hardcoded_bind_all_interfaces.html
+   Location: cloned_repos/project2/vla-scripts/deploy.py:132:16
+131	    # Server Configuration
+132	    host: str = "0.0.0.0"                                               # Host IP Address
+133	    port: int = 8000                                                    # Host Port
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:129:8
+128	
+129	        assert config_json.exists(), f"Missing `config.json` for `{run_dir = }`"
+130	        assert checkpoint_pt.exists(), f"Missing checkpoint for `{run_dir = }`"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:130:8
+129	        assert config_json.exists(), f"Missing `config.json` for `{run_dir = }`"
+130	        assert checkpoint_pt.exists(), f"Missing checkpoint for `{run_dir = }`"
+131	        assert dataset_statistics_json.exists(), f"Missing `dataset_statistics.json` for `{run_dir = }`"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:131:8
+130	        assert checkpoint_pt.exists(), f"Missing checkpoint for `{run_dir = }`"
+131	        assert dataset_statistics_json.exists(), f"Missing `dataset_statistics.json` for `{run_dir = }`"
+132	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:170:4
+169	    tokenizer.init_kwargs.pop("add_prefix_space", None)  # Pop to prevent unnecessary warning on reload...
+170	    assert tokenizer.pad_token_id == hf_config.pad_token_id, "Incorrect Pad Token ID!"
+171	    assert len(tokenizer) > hf_config.text_config.vocab_size, "Tokenizer vocabulary must be larger than LLM vocabulary!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:171:4
+170	    assert tokenizer.pad_token_id == hf_config.pad_token_id, "Incorrect Pad Token ID!"
+171	    assert len(tokenizer) > hf_config.text_config.vocab_size, "Tokenizer vocabulary must be larger than LLM vocabulary!"
+172	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:177:4
+176	    hf_config.text_config.torch_dtype = torch.bfloat16
+177	    assert hf_config.text_config.use_cache, "LLM config `use_cache` should be True for inference (set default)!"
+178	
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:220:23
+219	    print("[*] Loading Prismatic VLM State Dictionary from Checkpoint")
+220	    model_state_dict = torch.load(checkpoint_pt, map_location="cpu")["model"]
+221	    assert ("downsampler" not in model_state_dict) or (len(model_state_dict["downsampler"]) == 0), "Downsampler?"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:221:4
+220	    model_state_dict = torch.load(checkpoint_pt, map_location="cpu")["model"]
+221	    assert ("downsampler" not in model_state_dict) or (len(model_state_dict["downsampler"]) == 0), "Downsampler?"
+222	    assert all([k in model_state_dict for k in ["vision_backbone", "projector", "llm_backbone"]]), "Missing keys!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/extern/convert_openvla_weights_to_hf.py:222:4
+221	    assert ("downsampler" not in model_state_dict) or (len(model_state_dict["downsampler"]) == 0), "Downsampler?"
+222	    assert all([k in model_state_dict for k in ["vision_backbone", "projector", "llm_backbone"]]), "Missing keys!"
+223	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/finetune.py:118:4
+117	    # [Validate] Ensure GPU Available & Set Device / Distributed Context
+118	    assert torch.cuda.is_available(), "Fine-tuning assumes at least one GPU is available!"
+119	    distributed_state = PartialState()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/finetune.py:145:8
+144	    if cfg.use_quantization:
+145	        assert cfg.use_lora, "Quantized training only supported for LoRA fine-tuning!"
+146	        quantization_config = BitsAndBytesConfig(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/train.py:99:8
+98	        # [Validate] Assert on `expected_world_size`
+99	        assert (
+100	            self.vla.expected_world_size == overwatch.world_size()
+101	        ), f"Expected World Size = {self.vla.expected_world_size} but Found {overwatch.world_size()} GPUs!"
+102	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/train.py:147:12
+146	        if cfg.is_resume:
+147	            assert int(re.search("step-(.+?)-", cfg.pretrained_checkpoint.name).group(1)) == cfg.resume_step
+148	            assert int(re.search("epoch-(.+?)-", cfg.pretrained_checkpoint.name).group(1)) == cfg.resume_epoch
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/train.py:148:12
+147	            assert int(re.search("step-(.+?)-", cfg.pretrained_checkpoint.name).group(1)) == cfg.resume_step
+148	            assert int(re.search("epoch-(.+?)-", cfg.pretrained_checkpoint.name).group(1)) == cfg.resume_epoch
+149	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/train.py:157:8
+156	    for param in vlm.parameters():
+157	        assert param.dtype == torch.float32, f"Loaded VLM parameter not in full precision: {param}"
+158	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/train.py:165:8
+164	    elif not cfg.vla.freeze_vision_backbone and cfg.vla.freeze_llm_backbone:
+165	        assert cfg.vla.unfreeze_last_llm_layer, "You should unfreeze at least the last layer of your LLM!"
+166	        stage = "vla-sandwich-train"  # Fine-tuning vision encoder, projector, and LLM last layer
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project2/vla-scripts/train.py:168:8
+167	    elif cfg.vla.freeze_vision_backbone and cfg.vla.freeze_llm_backbone:
+168	        assert cfg.vla.unfreeze_last_llm_layer, "Need to unfreeze at least last LLM layer to train!"
+169	        stage = "vla-last-layer-train"  # Fine-tuning LLM last layer only
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 10824
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 117
+		Medium: 11
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 4
+		Medium: 2
+		High: 122
+Files skipped (0):

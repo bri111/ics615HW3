@@ -1,0 +1,21 @@
+Bandit Summary Report for project5
+============================================================
+Total issues detected: 157
+
+Severity Breakdown:
+  HIGH: 7
+  MEDIUM: 32
+  LOW: 118
+
+Confidence Breakdown:
+  HIGH: 128
+  MEDIUM: 6
+  LOW: 23
+
+Code Scanned:
+  No code scanned metrics available.
+
+Run Metrics:
+  No run metrics available.
+
+Note: Bandit may produce false positives. Please review each finding manually.

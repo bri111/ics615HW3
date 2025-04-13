@@ -1,0 +1,1858 @@
+Analysis Report for project5
+============================================================
+
+Bandit Analysis Summary:
+Total issues detected: 0
+Severity Breakdown:
+
+Detailed Bandit Output:
+Run started:2025-04-13 05:13:46.405629
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: cloned_repos/project5/autogen/_website/notebook_processor.py:13:0
+12	import signal
+13	import subprocess
+14	import sys
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/_website/notebook_processor.py:69:22
+68	    try:
+69	        version_str = subprocess.check_output([quarto_bin, "--version"], text=True).strip()
+70	        version = tuple(map(int, version_str.split(".")))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/_website/notebook_processor.py:229:8
+228	        error = get_error_info(nb)
+229	        assert error is not None
+230	        return notebook_path, error
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/_website/notebook_processor.py:233:8
+232	        error = get_timeout_info(nb)
+233	        assert error is not None
+234	        return notebook_path, error
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/_website/notebook_processor.py:343:17
+342	        # Capture output
+343	        result = subprocess.run([quarto_bin, "render", intermediate_notebook], capture_output=True, text=True)
+344	        if result.returncode != 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/_website/notebook_processor.py:361:17
+360	
+361	        result = subprocess.run([quarto_bin, "render", src_notebook], capture_output=True, text=True)
+362	        if result.returncode != 0:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: cloned_repos/project5/autogen/_website/utils.py:7:0
+6	import shutil
+7	import subprocess
+8	import sys
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: cloned_repos/project5/autogen/_website/utils.py:36:11
+35	    """Get all files in the directory that are tracked by git or newly added."""
+36	    proc = subprocess.run(
+37	        ["git", "-C", str(directory), "ls-files", "--others", "--exclude-standard", "--cached"],
+38	        capture_output=True,
+39	        text=True,
+40	        check=True,
+41	    )
+42	    return list({directory / p for p in proc.stdout.splitlines()})
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/_website/utils.py:36:11
+35	    """Get all files in the directory that are tracked by git or newly added."""
+36	    proc = subprocess.run(
+37	        ["git", "-C", str(directory), "ls-files", "--others", "--exclude-standard", "--cached"],
+38	        capture_output=True,
+39	        text=True,
+40	        check=True,
+41	    )
+42	    return list({directory / p for p in proc.stdout.splitlines()})
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/chat.py:54:8
+53	    for chat_info in chat_queue:
+54	        assert "recipient" in chat_info, "recipient must be provided."
+55	        receipts_set.add(chat_info["recipient"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/agent_optimizer.py:206:8
+205	
+206	        assert isinstance(llm_config, (dict, LLMConfig)), "llm_config must be a dict or LLMConfig"
+207	        llm_config = copy.deepcopy(llm_config)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/agent_optimizer.py:227:12
+226	            )
+227	            assert reply in [
+228	                "0",
+229	                "1",
+230	            ], "The input is invalid. Please input 1 or 0. 1 represents satisfied. 0 represents not satisfied."
+231	            is_satisfied = reply == "1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/generate_images.py:245:8
+244	    def _should_generate_image(self, message: str) -> bool:
+245	        assert self._text_analyzer is not None
+246	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/generate_images.py:257:8
+256	    def _extract_prompt(self, last_message) -> str:
+257	        assert self._text_analyzer is not None
+258	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b403-import-pickle
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/teachability.py:8:0
+7	import os
+8	import pickle
+9	from typing import Any, Optional, Union
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/teachability.py:80:8
+79	            self.llm_config = agent.llm_config
+80	        assert self.llm_config, "Teachability requires a valid llm_config."
+81	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b301-pickle
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/teachability.py:281:37
+280	            with open(self.path_to_dict, "rb") as f:
+281	                self.uid_text_dict = pickle.load(f)
+282	                self.last_memo_id = len(self.uid_text_dict)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/teachability.py:335:8
+334	        input_text_2, output_text = self.uid_text_dict[uid]
+335	        assert input_text == input_text_2
+336	        if self.verbosity >= 1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/teachability.py:356:16
+355	                input_text_2, output_text = self.uid_text_dict[uid]
+356	                assert input_text == input_text_2
+357	                if self.verbosity >= 1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/text_compressors.py:58:8
+57	
+58	        assert isinstance(self._prompt_compressor, llmlingua.PromptCompressor)
+59	        self._compression_method = (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/transforms.py:197:8
+196	        """
+197	        assert self._max_tokens_per_message is not None
+198	        assert self._max_tokens is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/transforms.py:198:8
+197	        assert self._max_tokens_per_message is not None
+198	        assert self._max_tokens is not None
+199	        assert self._min_tokens is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/transforms.py:199:8
+198	        assert self._max_tokens is not None
+199	        assert self._min_tokens is not None
+200	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/transforms.py:410:12
+409	
+410	            assert isinstance(savings, int)
+411	            total_savings += savings
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/transforms.py:499:8
+498	        """
+499	        assert isinstance(position, str) and position in ["start", "end"]
+500	        assert isinstance(format_string, str) and "{name}" in format_string
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/transforms.py:500:8
+499	        assert isinstance(position, str) and position in ["start", "end"]
+500	        assert isinstance(format_string, str) and "{name}" in format_string
+501	        assert isinstance(deduplicate, bool) and deduplicate is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/transforms.py:501:8
+500	        assert isinstance(format_string, str) and "{name}" in format_string
+501	        assert isinstance(deduplicate, bool) and deduplicate is not None
+502	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/vision_capability.py:91:8
+90	        self._custom_caption_func = custom_caption_func
+91	        assert self._lmm_config or custom_caption_func, (
+92	            "Vision Capability requires a valid lmm_config or custom_caption_func."
+93	        )
+94	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/capabilities/vision_capability.py:168:12
+167	        for item in content:
+168	            assert isinstance(item, dict)
+169	            if item["type"] == "text":
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/agent_builder.py:12:0
+11	import re
+12	import subprocess as sp
+13	import time
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/agent_builder.py:30:4
+29	    # check config loading
+30	    assert config.get("coding") is not None, 'Missing "coding" in your config.'
+31	    assert config.get("default_llm_config") is not None, 'Missing "default_llm_config" in your config.'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/agent_builder.py:31:4
+30	    assert config.get("coding") is not None, 'Missing "coding" in your config.'
+31	    assert config.get("default_llm_config") is not None, 'Missing "default_llm_config" in your config.'
+32	    assert config.get("code_execution_config") is not None, 'Missing "code_execution_config" in your config.'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/agent_builder.py:32:4
+31	    assert config.get("default_llm_config") is not None, 'Missing "default_llm_config" in your config.'
+32	    assert config.get("code_execution_config") is not None, 'Missing "code_execution_config" in your config.'
+33	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/agent_builder.py:35:8
+34	    for agent_config in config["agent_configs"]:
+35	        assert agent_config.get("name", None) is not None, 'Missing agent "name" in your agent_configs.'
+36	        assert agent_config.get("system_message", None) is not None, (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/agent_builder.py:36:8
+35	        assert agent_config.get("name", None) is not None, 'Missing agent "name" in your agent_configs.'
+36	        assert agent_config.get("system_message", None) is not None, (
+37	            'Missing agent "system_message" in your agent_configs.'
+38	        )
+39	        assert agent_config.get("description", None) is not None, 'Missing agent "description" in your agent_configs.'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/agent_builder.py:39:8
+38	        )
+39	        assert agent_config.get("description", None) is not None, 'Missing agent "description" in your agent_configs.'
+40	
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/agent_builder.py:725:40
+724	        if filepath is None:
+725	            filepath = f"./save_config_{hashlib.md5(self.building_task.encode('utf-8')).hexdigest()}.json"
+726	        with open(filepath, "w") as save_file:
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/captainagent.py:470:32
+469	        if self._agent_config_save_path is not None:
+470	            building_task_md5 = hashlib.md5(building_task.encode("utf-8")).hexdigest()
+471	            with open(f"{self._agent_config_save_path}/build_history_{building_task_md5}.json", "w") as f:
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/tool_retriever.py:188:24
+187	            code = code_block.code
+188	            code_hash = md5(code.encode()).hexdigest()
+189	            filename = f"tmp_code_{code_hash}.py"
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b102_exec_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/tool_retriever.py:213:20
+212	                    # Exec the code in the execution environment
+213	                    exec(code, execution_env)
+214	            except Exception:
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b102_exec_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/tool_retriever.py:283:8
+282	        code = f.read()
+283	        exec(code)
+284	        function_name = os.path.splitext(os.path.basename(py_file))[0]
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/tools/information_retrieval/get_youtube_caption.py:31:15
+30	
+31	    response = requests.get(url, headers=headers, params=querystring)
+32	    response = response.json()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/tools/information_retrieval/perform_web_search.py:38:15
+37	    # Send the API request
+38	    response = requests.get(url, headers=headers, params=params)
+39	    response.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/tools/information_retrieval/scrape_wikipedia_tables.py:18:15
+17	
+18	    response = requests.get(url)
+19	    response.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/captainagent/tools/information_retrieval/youtube_download.py:26:15
+25	
+26	    response = requests.get(endpoint, headers=headers, params=querystring)
+27	    response = response.json()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/gpt_assistant_agent.py:231:8
+230	        run_response_messages = self._get_run_response(assistant_thread, run)
+231	        assert len(run_response_messages) > 0, "No response from the assistant."
+232	
+
+--------------------------------------------------
+>> Issue: [B107:hardcoded_password_default] Possible hardcoded password: 'neo4j'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b107_hardcoded_password_default.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/graph_rag/neo4j_graph_query_engine.py:56:4
+55	
+56	    def __init__(  # type: ignore[no-any-unimported]
+57	        self,
+58	        host: str = "bolt://localhost",
+59	        port: int = 7687,
+60	        database: str = "neo4j",
+61	        username: str = "neo4j",
+62	        password: str = "neo4j",
+63	        llm: Optional["LLM"] = None,
+64	        embedding: Optional["BaseEmbedding"] = None,
+65	        entities: Optional["TypeAlias"] = None,
+66	        relations: Optional["TypeAlias"] = None,
+67	        schema: Optional[Union[dict[str, str], list["Triple"]]] = None,
+68	        strict: Optional[bool] = False,
+69	    ):
+70	        """Initialize a Neo4j Property graph.
+71	        Please also refer to https://docs.llamaindex.ai/en/stable/examples/property_graph/graph_store/
+72	
+73	        Args:
+74	            name (str): Property graph name.
+75	            host (str): Neo4j hostname.
+76	            port (int): Neo4j port number.
+77	            database (str): Neo4j database name.
+78	            username (str): Neo4j username.
+79	            password (str): Neo4j password.
+80	            llm (LLM): Language model to use for extracting triplets.
+81	            embedding (BaseEmbedding): Embedding model to use constructing index and query
+82	            entities (Optional[TypeAlias]): Custom suggested entities to include in the graph.
+83	            relations (Optional[TypeAlias]): Custom suggested relations to include in the graph.
+84	            schema (Optional[Union[Dict[str, str], List[Triple]]): Custom schema to specify allowed relationships for each entity.
+85	            strict (Optional[bool]): If false, allows for values outside of the input schema.
+86	        """
+87	        self.host = host
+88	        self.port = port
+89	        self.database = database
+90	        self.username = username
+91	        self.password = password
+92	        self.llm = llm or OpenAI(model="gpt-4o", temperature=0.0)
+93	        self.embedding = embedding or OpenAIEmbedding(model_name="text-embedding-3-small")
+94	        self.entities = entities
+95	        self.relations = relations
+96	        self.schema = schema
+97	        self.strict = strict
+98	
+
+--------------------------------------------------
+>> Issue: [B107:hardcoded_password_default] Possible hardcoded password: 'password'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b107_hardcoded_password_default.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/graph_rag/neo4j_native_graph_query_engine.py:35:4
+34	
+35	    def __init__(  # type: ignore[no-any-unimported]
+36	        self,
+37	        host: str = "neo4j://localhost",
+38	        port: int = 7687,
+39	        username: str = "neo4j",
+40	        password: str = "password",
+41	        embeddings: Optional["Embedder"] = None,
+42	        embedding_dimension: Optional[int] = 3072,
+43	        llm: Optional["LLMInterface"] = None,
+44	        query_llm: Optional["LLMInterface"] = None,
+45	        entities: Optional[List[str]] = None,
+46	        relations: Optional[List[str]] = None,
+47	        potential_schema: Optional[List[tuple[str, str, str]]] = None,
+48	    ):
+49	        """Initialize a Neo4j graph query engine.
+50	
+51	        Args:
+52	            host (str): Neo4j host URL.
+53	            port (int): Neo4j port.
+54	            username (str): Neo4j username.
+55	            password (str): Neo4j password.
+56	            embeddings (Embedder): Embedding model to embed chunk data and retrieve answers.
+57	            embedding_dimension (int): Dimension of the embeddings for the model.
+58	            llm (LLMInterface): Language model for creating the knowledge graph (returns JSON responses).
+59	            query_llm (LLMInterface): Language model for querying the knowledge graph.
+60	            entities (List[str], optional): Custom entities for guiding graph construction.
+61	            relations (List[str], optional): Custom relations for guiding graph construction.
+62	            potential_schema (List[tuple[str, str, str]], optional): Schema (triplets, i.e., [entity] -> [relationship] -> [entity]) to guide graph construction.
+63	        """
+64	        self.uri = f"{host}:{port}"
+65	        self.driver = GraphDatabase.driver(self.uri, auth=(username, password))
+66	        self.embeddings = embeddings or OpenAIEmbeddings(model="text-embedding-3-large")
+67	        self.embedding_dimension = embedding_dimension
+68	        self.llm = llm or OpenAILLM(
+69	            model_name="gpt-4o",
+70	            model_params={"response_format": {"type": "json_object"}, "temperature": 0},
+71	        )
+72	        self.query_llm = query_llm or OpenAILLM(model_name="gpt-4o", model_params={"temperature": 0})
+73	        self.entities = entities
+74	        self.relations = relations
+75	        self.potential_schema = potential_schema
+76	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/img_utils.py:66:19
+65	        # A URL file
+66	        response = requests.get(image_file)
+67	        content = BytesIO(response.content)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/img_utils.py:206:4
+205	    """
+206	    assert img_format in ["uri", "url", "pil"]
+207	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/llava_agent.py:54:8
+53	
+54	        assert self.llm_config is not None, "llm_config must be provided."
+55	        self.register_reply([Agent, None], reply_func=LLaVAAgent._image_reply, position=2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/llava_agent.py:96:8
+95	
+96	        assert out != "", "Empty response from LLaVA."
+97	
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b104_hardcoded_bind_all_interfaces.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/llava_agent.py:110:31
+109	):
+110	    if config["base_url"].find("0.0.0.0") >= 0 or config["base_url"].find("localhost") >= 0:
+111	        llava_mode = "local"
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/llava_agent.py:126:19
+125	
+126	        response = requests.post(
+127	            config["base_url"].rstrip("/") + "/worker_generate_stream", headers=headers, json=pload, stream=False
+128	        )
+129	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/multimodal_conversable_agent.py:89:12
+88	        if isinstance(message, dict):
+89	            assert "content" in message, "The message dict must have a `content` field"
+90	            if isinstance(message["content"], str):
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/retrieve_user_proxy_agent.py:381:40
+380	                if self._vector_db.type != "qdrant"
+381	                else [str(uuid.UUID(hex=hashlib.md5(chunk.encode("utf-8")).hexdigest())) for chunk in chunks]
+382	            )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/text_analyzer_agent.py:63:8
+62	            messages = self._oai_messages[sender]  # In case of a direct call.
+63	        assert len(messages) == 2
+64	
+
+--------------------------------------------------
+>> Issue: [B107:hardcoded_password_default] Possible hardcoded password: 'password'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b107_hardcoded_password_default.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/couchbase.py:43:4
+42	
+43	    def __init__(
+44	        self,
+45	        connection_string: str = "couchbase://localhost",
+46	        username: str = "Administrator",
+47	        password: str = "password",
+48	        bucket_name: str = "vector_db",
+49	        embedding_function: Callable = None,
+50	        scope_name: str = "_default",
+51	        collection_name: str = "_default",
+52	        index_name: str = None,
+53	    ):
+54	        """
+55	        Initialize the vector database.
+56	        Args:
+57	            connection_string (str): The Couchbase connection string to connect to. Default is 'couchbase://localhost'.
+58	            username (str): The username for Couchbase authentication. Default is 'Administrator'.
+59	            password (str): The password for Couchbase authentication. Default is 'password'.
+60	            bucket_name (str): The name of the bucket. Default is 'vector_db'.
+61	            embedding_function (Callable): The embedding function used to generate the vector representation. Default is SentenceTransformer("all-MiniLM-L6-v2").encode.
+62	            scope_name (str): The name of the scope. Default is '_default'.
+63	            collection_name (str): The name of the collection to create for this vector database. Default is '_default'.
+64	            index_name (str): Index name for the vector database. Default is None.
+65	            overwrite (bool): Whether to overwrite existing data. Default is False.
+66	            wait_until_index_ready (float or None): Blocking call to wait until the database indexes are ready. None means no wait. Default is None.
+67	            wait_until_document_ready (float or None): Blocking call to wait until the database documents are ready. None means no wait. Default is None.
+68	        """
+69	        if embedding_function is None:
+70	            embedding_function = SentenceTransformer("all-MiniLM-L6-v2").encode
+71	        self.embedding_function = embedding_function
+72	        self.index_name = index_name
+73	
+74	        # This will get the model dimension size by computing the embeddings dimensions
+75	        self.dimensions = self._get_embedding_size()
+76	
+77	        try:
+78	            auth = PasswordAuthenticator(username, password)
+79	            cluster = Cluster(connection_string, ClusterOptions(auth))
+80	            cluster.wait_until_ready(timedelta(seconds=5))
+81	            self.cluster = cluster
+82	
+83	            self.bucket = cluster.bucket(bucket_name)
+84	            self.scope = self.bucket.scope(scope_name)
+85	            self.collection = self.scope.collection(collection_name)
+86	            self.active_collection = self.collection
+87	
+88	            logger.debug("Successfully connected to Couchbase")
+89	        except Exception as err:
+90	            raise ConnectionError("Could not connect to Couchbase server") from err
+91	
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/couchbase.py:349:22
+348	            include_str = ", ".join(include)
+349	            query = f"SELECT {include_str} FROM {self.bucket.name}.{self.scope.name}.{collection.name}"
+350	            result = self.cluster.query(query)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/mongodb.py:109:8
+108	        """
+109	        assert action in ["create", "delete"], f"{action=} must be create or delete."
+110	        start = monotonic()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/mongodb.py:359:8
+358	        embeddings = self.embedding_function(texts).tolist()
+359	        assert len(embeddings) == n_texts, (
+360	            f"The number of embeddings produced by self.embedding_function ({len(embeddings)} does not match the number of texts provided to it ({n_texts})."
+361	        )
+362	        to_insert = [
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:109:27
+108	                sql_values.append((doc_id, embedding, metadata, document))
+109	            sql_string = f"INSERT INTO {self.name} (id, embedding, metadatas, documents)\nVALUES (%s, %s, %s, %s);\n"
+110	        elif embeddings is not None:
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:113:27
+112	                sql_values.append((doc_id, embedding, document))
+113	            sql_string = f"INSERT INTO {self.name} (id, embedding, documents) VALUES (%s, %s, %s);\n"
+114	        elif metadatas is not None:
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:119:27
+118	                sql_values.append((doc_id, metadata, embedding, document))
+119	            sql_string = f"INSERT INTO {self.name} (id, metadatas, embedding, documents)\nVALUES (%s, %s, %s, %s);\n"
+120	        else:
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:124:27
+123	                sql_values.append((doc_id, document, embedding))
+124	            sql_string = f"INSERT INTO {self.name} (id, documents, embedding)\nVALUES (%s, %s, %s);\n"
+125	        logger.debug(f"Add SQL String:\n{sql_string}\n{sql_values}")
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:154:18
+153	            sql_string = (
+154	                f"INSERT INTO {self.name} (id, embedding, metadatas, documents)\n"
+155	                f"VALUES (%s, %s, %s, %s)\n"
+156	                f"ON CONFLICT (id)\n"
+157	                f"DO UPDATE SET embedding = %s,\n"
+158	                f"metadatas = %s, documents = %s;\n"
+159	            )
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:164:18
+163	            sql_string = (
+164	                f"INSERT INTO {self.name} (id, embedding, documents) "
+165	                f"VALUES (%s, %s, %s) ON CONFLICT (id)\n"
+166	                f"DO UPDATE SET embedding = %s, documents = %s;\n"
+167	            )
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:174:18
+173	            sql_string = (
+174	                f"INSERT INTO {self.name} (id, metadatas, embedding, documents)\n"
+175	                f"VALUES (%s, %s, %s, %s)\n"
+176	                f"ON CONFLICT (id)\n"
+177	                f"DO UPDATE SET metadatas = %s, documents = %s, embedding = %s;\n"
+178	            )
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:184:18
+183	            sql_string = (
+184	                f"INSERT INTO {self.name} (id, documents, embedding)\n"
+185	                f"VALUES (%s, %s, %s)\n"
+186	                f"ON CONFLICT (id)\n"
+187	                f"DO UPDATE SET documents = %s;\n"
+188	            )
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:200:18
+199	        cursor = self.client.cursor()
+200	        query = f"SELECT COUNT(*) FROM {self.name}"
+201	        cursor.execute(query)
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:328:14
+327	        sql_string = (
+328	            f"INSERT INTO {self.name} (id, embedding, metadata, document) "
+329	            f"VALUES (%s, %s, %s, %s) "
+330	            f"ON CONFLICT (id) "
+331	            f"DO UPDATE SET id = %s, embedding = %s, "
+332	            f"metadata = %s, document = %s;\n"
+333	        )
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:425:18
+424	            query = (
+425	                f"SELECT id, documents, embedding, metadatas "
+426	                f"FROM {self.name} "
+427	                f"{clause} embedding {index_function} '{vector!s}' {distance_threshold} "
+428	                f"LIMIT {n_results}"
+429	            )
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b608_hardcoded_sql_expressions.html
+   Location: cloned_repos/project5/autogen/agentchat/contrib/vectordb/pgvectordb.py:498:25
+497	        id_placeholders = ", ".join(["%s" for _ in ids])
+498	        cursor.execute(f"DELETE FROM {self.name} WHERE id IN ({id_placeholders});", ids)
+499	        cursor.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/conversable_agent.py:2977:12
+2976	            rst = trigger(sender)
+2977	            assert isinstance(rst, bool), f"trigger {trigger} must return a boolean value."
+2978	            return rst
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/conversable_agent.py:3725:8
+3724	        """
+3725	        assert hookable_method in self.hook_lists, f"{hookable_method} is not a hookable method."
+3726	        hook_list = self.hook_lists[hookable_method]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/conversable_agent.py:3727:8
+3726	        hook_list = self.hook_lists[hookable_method]
+3727	        assert hook not in hook_list, f"{hook} is already registered as a hook."
+3728	        hook_list.append(hook)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project5/autogen/agentchat/groupchat.py:436:15
+435	            agents = self.agents
+436	        return random.choice(agents)
+437	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/utils.py:23:12
+22	        if uniform_sender is None:
+23	            assert "sender" in c, "sender must be provided."
+24	            sender = c["sender"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/utils.py:27:8
+26	            sender = uniform_sender
+27	        assert "recipient" in c, "recipient must be provided."
+28	        summary_method = c.get("summary_method")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/utils.py:29:8
+28	        summary_method = c.get("summary_method")
+29	        assert (
+30	            summary_method is None or callable(summary_method) or summary_method in ("last_msg", "reflection_with_llm")
+31	        ), "summary_method must be a string chosen from 'reflection_with_llm' or 'last_msg' or a callable, or None."
+32	        if summary_method == "reflection_with_llm":
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agentchat/utils.py:33:12
+32	        if summary_method == "reflection_with_llm":
+33	            assert sender.client is not None or c["recipient"].client is not None, (
+34	                "llm client must be set in either the recipient or sender when summary_method is reflection_with_llm."
+35	            )
+36	
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b307-eval
+   Location: cloned_repos/project5/autogen/agentchat/utils.py:418:19
+417	        try:
+418	            return eval(eval_expr)  # type: ignore[no-any-return]
+419	        except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agents/experimental/reasoning/reasoning_agent.py:299:4
+298	
+299	    assert contrastive_threshold > 0
+300	    assert contrastive_threshold < 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agents/experimental/reasoning/reasoning_agent.py:300:4
+299	    assert contrastive_threshold > 0
+300	    assert contrastive_threshold < 1
+301	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agents/experimental/reasoning/reasoning_agent.py:688:8
+687	        # Assert that all nodes have the same parent and it is not None
+688	        assert all(node.parent == nodes[0].parent for node in nodes), "All nodes must have the same parent."
+689	        assert nodes[0].parent is not None, "Parent node must not be None."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agents/experimental/reasoning/reasoning_agent.py:689:8
+688	        assert all(node.parent == nodes[0].parent for node in nodes), "All nodes must have the same parent."
+689	        assert nodes[0].parent is not None, "Parent node must not be None."
+690	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agents/experimental/reasoning/reasoning_agent.py:788:8
+787	        """
+788	        assert isinstance(self._executor, AssistantAgent)
+789	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/agents/experimental/reasoning/reasoning_agent.py:962:8
+961	
+962	        assert final_answers, "No final answers found."
+963	        final_answers_list = list(final_answers)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project5/autogen/agents/experimental/reasoning/reasoning_agent.py:1041:23
+1040	                    break
+1041	                node = random.choice(node.children)
+1042	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/browser_utils.py:176:19
+175	        # Make the request
+176	        response = requests.get(self.bing_base_url, **request_kwargs)
+177	        response.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/browser_utils.py:220:23
+219	            # Send a HTTP request to the URL
+220	            response = requests.get(url, **request_kwargs)
+221	            response.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b403-import-pickle
+   Location: cloned_repos/project5/autogen/cache/cosmos_db_cache.py:9:0
+8	
+9	import pickle
+10	from typing import Any, Optional, TypedDict, Union
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b301-pickle
+   Location: cloned_repos/project5/autogen/cache/cosmos_db_cache.py:96:19
+95	            response = self.container.read_item(item=key, partition_key=str(self.seed))
+96	            return pickle.loads(response["data"])
+97	        except CosmosResourceNotFoundError:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b403-import-pickle
+   Location: cloned_repos/project5/autogen/cache/redis_cache.py:7:0
+6	# SPDX-License-Identifier: MIT
+7	import pickle
+8	import sys
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b301-pickle
+   Location: cloned_repos/project5/autogen/cache/redis_cache.py:81:15
+80	            return default
+81	        return pickle.loads(result)
+82	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: cloned_repos/project5/autogen/code_utils.py:12:0
+11	import string
+12	import subprocess
+13	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/code_utils.py:79:8
+78	            raise TypeError("Wrong content format: every element should be dict if the content is a list.")
+79	        assert "type" in item, "Wrong content format. Missing 'type' key in content's dict."
+80	        if item["type"] == "text":
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: cloned_repos/project5/autogen/code_utils.py:152:17
+151	    try:
+152	        result = subprocess.run(["powershell", "$PSVersionTable.PSVersion.Major"], capture_output=True, text=True)
+153	        if result.returncode == 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/code_utils.py:152:17
+151	    try:
+152	        result = subprocess.run(["powershell", "$PSVersionTable.PSVersion.Major"], capture_output=True, text=True)
+153	        if result.returncode == 0:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: cloned_repos/project5/autogen/code_utils.py:158:21
+157	        try:
+158	            result = subprocess.run(
+159	                ["pwsh", "-Command", "$PSVersionTable.PSVersion.Major"], capture_output=True, text=True
+160	            )
+161	            if result.returncode == 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/code_utils.py:158:21
+157	        try:
+158	            result = subprocess.run(
+159	                ["pwsh", "-Command", "$PSVersionTable.PSVersion.Major"], capture_output=True, text=True
+160	            )
+161	            if result.returncode == 0:
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: cloned_repos/project5/autogen/code_utils.py:340:20
+339	    if filename is None:
+340	        code_hash = md5(code.encode()).hexdigest()
+341	        # create a file with a automatically generated name
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: cloned_repos/project5/autogen/coding/docker_commandline_code_executor.py:223:39
+222	            if not filename:
+223	                filename = f"tmp_code_{md5(code.encode()).hexdigest()}.{lang}"
+224	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: cloned_repos/project5/autogen/coding/jupyter/import_utils.py:5:0
+4	
+5	import subprocess
+6	from functools import lru_cache
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: cloned_repos/project5/autogen/coding/jupyter/import_utils.py:21:8
+20	    try:
+21	        subprocess.run(
+22	            ["jupyter", "kernelgateway", "--version"],
+23	            stdout=subprocess.PIPE,
+24	            stderr=subprocess.PIPE,
+25	            check=True,
+26	        )
+27	        return True
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/coding/jupyter/import_utils.py:21:8
+20	    try:
+21	        subprocess.run(
+22	            ["jupyter", "kernelgateway", "--version"],
+23	            stdout=subprocess.PIPE,
+24	            stderr=subprocess.PIPE,
+25	            check=True,
+26	        )
+27	        return True
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: cloned_repos/project5/autogen/coding/jupyter/local_jupyter_server.py:13:0
+12	import signal
+13	import subprocess
+14	import sys
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/coding/jupyter/local_jupyter_server.py:63:12
+62	        try:
+63	            subprocess.run(
+64	                [sys.executable, "-m", "jupyter", "kernelgateway", "--version"],
+65	                check=True,
+66	                capture_output=True,
+67	                text=True,
+68	            )
+69	        except subprocess.CalledProcessError:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/coding/jupyter/local_jupyter_server.py:114:27
+113	            args.extend(["--KernelGatewayApp.port_retries", "0"])
+114	        self._subprocess = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+115	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/coding/jupyter/local_jupyter_server.py:117:8
+116	        # Satisfy mypy, we know this is not None because we passed PIPE
+117	        assert self._subprocess.stderr is not None
+118	        # Read stderr until we see "is available at" or the process has exited with an error
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: cloned_repos/project5/autogen/coding/local_commandline_code_executor.py:10:0
+9	import re
+10	import subprocess
+11	import sys
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/coding/local_commandline_code_executor.py:225:25
+224	            try:
+225	                result = subprocess.run(
+226	                    cmd,
+227	                    cwd=self._work_dir,
+228	                    capture_output=True,
+229	                    text=True,
+230	                    timeout=float(self._timeout),
+231	                    encoding="utf-8",
+232	                )
+233	            except subprocess.TimeoutExpired as e:
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: cloned_repos/project5/autogen/coding/local_commandline_code_executor.py:287:28
+286	                # create a file with an automatically generated name
+287	                code_hash = md5(code.encode()).hexdigest()
+288	                filename = f"tmp_code_{code_hash}.{'py' if lang.startswith('python') else lang}"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: cloned_repos/project5/autogen/coding/local_commandline_code_executor.py:313:25
+312	            try:
+313	                result = subprocess.run(
+314	                    cmd,
+315	                    cwd=self._work_dir,
+316	                    capture_output=True,
+317	                    text=True,
+318	                    timeout=float(self._timeout),
+319	                    env=env,
+320	                    encoding="utf-8",
+321	                )
+322	            except subprocess.TimeoutExpired:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/core/build.py:67:8
+66	    else:
+67	        assert not (is_sync and is_call_async), f"You cannot use async dependency `{name}` at sync main"
+68	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/core/build.py:102:12
+101	
+102	            assert len(custom_annotations) <= 1, (
+103	                f"Cannot specify multiple `Annotated` Custom arguments for `{param_name}`!"
+104	            )
+105	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/core/build.py:134:12
+133	        if isinstance(default, Depends):
+134	            assert not dep, "You can not use `Depends` with `Annotated` and default both"
+135	            dep, default = default, Ellipsis
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/core/build.py:138:12
+137	        elif isinstance(default, CustomField):
+138	            assert not custom, "You can not use `CustomField` with `Annotated` and default both"
+139	            custom, default = default, Ellipsis
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/core/build.py:162:12
+161	        elif custom:
+162	            assert not (is_sync and is_coroutine_callable(custom.use)), (
+163	                f"You cannot use async custom field `{type(custom).__name__}` at sync `{name}`"
+164	            )
+165	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/core/model.py:233:12
+232	            call = dependency_overrides.get(self.call, self.call)
+233	            assert self.is_async or not is_coroutine_callable(call), (
+234	                f"You cannot use async dependency `{self.call_name}` at sync main"
+235	            )
+236	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/core/model.py:282:12
+281	        if self.cast:
+282	            assert self.model, "Cast should be used only with model"
+283	            casted_model = self.model(**solved_kw)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/library/model.py:42:8
+41	    def use(self, /, **kwargs: Any) -> Dict[str, Any]:
+42	        assert self.param_name, "You should specify `param_name` before using"
+43	        return kwargs
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/schema.py:19:4
+18	) -> Dict[str, Any]:
+19	    assert call.model, "Call should has a model"
+20	    params_model = create_model(  # type: ignore[call-overload]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/fast_depends/schema.py:63:8
+62	    if name:
+63	        assert refs, "Smth wrong"
+64	        data = refs[name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/anthropic.py:207:8
+206	        anthropic_params["model"] = params.get("model")
+207	        assert anthropic_params["model"], "Please provide a `model` in the config_list to use the Anthropic API."
+208	
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: ''
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: cloned_repos/project5/autogen/oai/bedrock.py:139:39
+138	            or self._aws_secret_key is None
+139	            or self._aws_secret_key == ""
+140	        ):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/bedrock.py:172:8
+171	        self._model_id = params.get("model")
+172	        assert self._model_id, "Please provide the 'model` in the config_list to use Amazon Bedrock"
+173	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/oai/bedrock.py:509:15
+508	    # Send a request to the image URL
+509	    response = requests.get(image_url)
+510	    # Check if the request was successful
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/cerebras.py:87:8
+86	
+87	        assert self.api_key, (
+88	            "Please include the api_key in your config list entry for Cerebras or set the CEREBRAS_API_KEY env variable."
+89	        )
+90	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/cerebras.py:125:8
+124	        cerebras_params["model"] = params.get("model")
+125	        assert cerebras_params["model"], (
+126	            "Please specify the 'model' in your config list entry to nominate the Cerebras model to use."
+127	        )
+128	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/client.py:1261:8
+1260	        completion_tokens = 0
+1261	        assert isinstance(d, dict), d
+1262	        if hasattr(chunk, field) and getattr(chunk, field) is not None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/client.py:1334:8
+1333	        # Handle tool call
+1334	        assert full_tool_call is None or isinstance(full_tool_call, dict), full_tool_call
+1335	        if tool_calls_chunk:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/cohere.py:102:8
+101	
+102	        assert self.api_key, (
+103	            "Please include the api_key in your config list entry for Cohere or set the COHERE_API_KEY env variable."
+104	        )
+105	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/cohere.py:139:8
+138	        cohere_params["model"] = params.get("model")
+139	        assert cohere_params["model"], (
+140	            "Please specify the 'model' in your config list entry to nominate the Cohere model to use."
+141	        )
+142	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/gemini.py:146:12
+145	        if "credentials" in params:
+146	            assert isinstance(params["credentials"], Credentials), (
+147	                "Object type google.auth.credentials.Credentials is expected!"
+148	            )
+149	            vertexai_init_args["credentials"] = params["credentials"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/gemini.py:176:12
+175	        if not self.use_vertexai:
+176	            assert ("project_id" not in kwargs) and ("location" not in kwargs), (
+177	                "Google Cloud project and compute location cannot be set when using an API Key!"
+178	            )
+179	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/gemini.py:223:12
+222	        else:
+223	            assert ("project_id" not in params) and ("location" not in params), (
+224	                "Google Cloud project and compute location cannot be set when using an API Key!"
+225	            )
+226	        model_name = params.get("model", "gemini-pro")
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project5/autogen/oai/gemini.py:319:20
+318	        ans = ""
+319	        random_id = random.randint(0, 10000)
+320	        prev_function_calls = []
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project5/autogen/oai/gemini.py:391:19
+390	        response_oai = ChatCompletion(
+391	            id=str(random.randint(0, 1000)),
+392	            model=model_name,
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/gemini.py:489:20
+488	                if isinstance(msg, dict):
+489	                    assert "type" in msg, f"Missing 'type' field in message: {msg}"
+490	                    if msg["type"] == "text":
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/oai/gemini.py:844:19
+843	    if image_file.startswith("http://") or image_file.startswith("https://"):
+844	        response = requests.get(image_file)
+845	        content = response.content
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/groq.py:82:8
+81	
+82	        assert self.api_key, (
+83	            "Please include the api_key in your config list entry for Groq or set the GROQ_API_KEY env variable."
+84	        )
+85	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/groq.py:120:8
+119	        groq_params["model"] = params.get("model")
+120	        assert groq_params["model"], (
+121	            "Please specify the 'model' in your config list entry to nominate the Groq model to use."
+122	        )
+123	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/mistral.py:87:8
+86	
+87	        assert self.api_key, (
+88	            "Please specify the 'api_key' in your config list entry for Mistral or set the MISTRAL_API_KEY env variable."
+89	        )
+90	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/mistral.py:110:8
+109	        mistral_params["model"] = params.get("model")
+110	        assert mistral_params["model"], (
+111	            "Please specify the 'model' in your config list entry to nominate the Mistral.ai model to use."
+112	        )
+113	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/ollama.py:144:8
+143	        ollama_params["model"] = params.get("model")
+144	        assert ollama_params["model"], (
+145	            "Please specify the 'model' in your config list entry to nominate the Ollama model to use."
+146	        )
+147	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project5/autogen/oai/ollama.py:318:40
+317	                            tool_calls = []
+318	                            random_id = random.randint(0, 10000)
+319	                            for tool_call in response["message"]["tool_calls"]:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project5/autogen/oai/ollama.py:341:36
+340	                        tool_calls = []
+341	                        random_id = random.randint(0, 10000)
+342	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: cloned_repos/project5/autogen/oai/ollama.py:574:24
+573	                                data_object = json.loads(fixed_json)
+574	                        except Exception:
+575	                            pass
+576	                except Exception:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: cloned_repos/project5/autogen/oai/ollama.py:576:16
+575	                            pass
+576	                except Exception:
+577	                    pass
+578	
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b307-eval
+   Location: cloned_repos/project5/autogen/oai/ollama.py:615:27
+614	            try:
+615	                new_item = eval(item)
+616	                if isinstance(new_item, dict):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/openai_utils.py:178:8
+177	    if base_urls is not None:
+178	        assert len(api_keys) == len(base_urls), "The length of api_keys must match the length of base_urls"
+179	    config_list = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/together.py:88:8
+87	
+88	        assert self.api_key, (
+89	            "Please include the api_key in your config list entry for Together.AI or set the TOGETHER_API_KEY env variable."
+90	        )
+91	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/oai/together.py:121:8
+120	        together_params["model"] = params.get("model")
+121	        assert together_params["model"], (
+122	            "Please specify the 'model' in your config list entry to nominate the Together.AI model to use."
+123	        )
+124	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project5/autogen/token_count_utils.py:186:24
+185	                    if "image_url" in part:
+186	                        assert "url" in part["image_url"]
+187	                        if not pil_imported and not logger.img_dependency_warned:
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project5/autogen/tools/experimental/wikipedia/wikipedia.py:93:19
+92	
+93	        response = requests.get(url=self.base_url, params=params, headers=self.headers)
+94	        response.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: cloned_repos/project5/autogen/tools/function_utils.py:388:4
+387	        return str(retval_model.model_dump()["result"])
+388	    except Exception:
+389	        pass
+390	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 42856
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 118
+		Medium: 32
+		High: 7
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 23
+		Medium: 6
+		High: 128
+Files skipped (0):
+
+TruffleHog Analysis Summary:
+Total secrets detected: 0
+
+Detailed TruffleHog Findings:
+
+
+Observations on False Positives/Negatives:
+Note that static analysis tools may report false positives (flagging safe code as problematic) or miss issues (false negatives). Manual review is recommended.
+
+Critical Vulnerability Analysis (Example):
+Example Vulnerability:
+File: example.py at line 42
+Issue: Usage of 'eval' can lead to remote code execution if unsanitized input is provided.
+Explanation: Directly using 'eval' on user input may allow an attacker to execute arbitrary code. Exploitation of this vulnerability could lead to system compromise.
+Fix: Replace 'eval' with safer alternatives by thoroughly validating and sanitizing inputs or using specialized libraries.

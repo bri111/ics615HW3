@@ -1,0 +1,1337 @@
+Run started:2025-04-13 08:13:50.755655
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '<image>'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: cloned_repos/project3/gllava/constants.py:9:22
+8	IMAGE_TOKEN_INDEX = -200
+9	DEFAULT_IMAGE_TOKEN = "<image>"
+10	DEFAULT_IMAGE_PATCH_TOKEN = "<im_patch>"
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '<im_patch>'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: cloned_repos/project3/gllava/constants.py:10:28
+9	DEFAULT_IMAGE_TOKEN = "<image>"
+10	DEFAULT_IMAGE_PATCH_TOKEN = "<im_patch>"
+11	DEFAULT_IM_START_TOKEN = "<im_start>"
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '<im_start>'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: cloned_repos/project3/gllava/constants.py:11:25
+10	DEFAULT_IMAGE_PATCH_TOKEN = "<im_patch>"
+11	DEFAULT_IM_START_TOKEN = "<im_start>"
+12	DEFAULT_IM_END_TOKEN = "<im_end>"
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '<im_end>'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: cloned_repos/project3/gllava/constants.py:12:23
+11	DEFAULT_IM_START_TOKEN = "<im_start>"
+12	DEFAULT_IM_END_TOKEN = "<im_end>"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/conversation.py:77:20
+76	                if i == 0:
+77	                    assert message, "first message should not be none"
+78	                    assert role == self.roles[0], "first message should come from user"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/conversation.py:78:20
+77	                    assert message, "first message should not be none"
+78	                    assert role == self.roles[0], "first message should come from user"
+79	                if message:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/eval_gpt_review_bench.py:95:12
+94	        else:
+95	            assert False, f"Visual QA category not found in rule file: {category}."
+96	        prompt = rule['prompt']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/eval_gpt_review_visual.py:92:12
+91	        else:
+92	            assert False, f"Visual QA category not found in rule file: {category}."
+93	        prompt = rule['prompt']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/eval_pope.py:75:8
+74	    for file in os.listdir(args.annotation_dir):
+75	        assert file.startswith('coco_pope_')
+76	        assert file.endswith('.json')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/eval_pope.py:76:8
+75	        assert file.startswith('coco_pope_')
+76	        assert file.endswith('.json')
+77	        category = file[10:-5]
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/eval/eval_science_qa.py:36:15
+35	        return -1
+36	        return random.choice(range(len(choices)))
+37	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/eval/eval_science_qa_gpt4.py:35:15
+34	    else:
+35	        return random.choice(range(len(choices)))
+36	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/eval/eval_science_qa_gpt4_requery.py:37:15
+36	    else:
+37	        return random.choice(range(len(choices)))
+38	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/eval_science_qa_gpt4_requery.py:66:12
+65	        if prob_id not in our_predictions:
+66	            assert False
+67	        if prob_id not in gpt4_predictions:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/eval_science_qa_gpt4_requery.py:68:12
+67	        if prob_id not in gpt4_predictions:
+68	            assert False
+69	        our_pred = our_predictions[prob_id]['text']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/eval_textvqa.py:30:8
+29	    else:
+30	        assert False
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/m4c_evaluator.py:230:8
+229	        answers = [self.answer_processor(a) for a in raw_answers]
+230	        assert len(answers) == 10
+231	        gt_answers = list(enumerate(answers))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/eval/model_vqa_loader.py:66:4
+65	def create_data_loader(questions, image_folder, tokenizer, image_processor, model_config, batch_size=1, num_workers=4):
+66	    assert batch_size == 1, "batch_size must be 1"
+67	    dataset = CustomDataset(questions, image_folder, tokenizer, image_processor, model_config)
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/eval/run_llava.py:19:19
+18	    if image_file.startswith('http') or image_file.startswith('https'):
+19	        response = requests.get(image_file)
+20	        image = Image.open(BytesIO(response.content)).convert('RGB')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/mm_utils.py:92:8
+91	    def __call__(self, output_ids: torch.LongTensor, scores: torch.FloatTensor, **kwargs) -> bool:
+92	        assert output_ids.shape[0] == 1, "Only support batch size 1 (yet)"  # TODO
+93	        offset = min(output_ids.shape[1] - self.start_len, self.max_keyword_len)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/apply_delta.py:25:12
+24	        if name not in base.state_dict():
+25	            assert name in ['model.mm_projector.weight', 'model.mm_projector.bias'], f'{name} not in base model'
+26	            continue
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/apply_delta.py:30:12
+29	        else:
+30	            assert name in ['model.embed_tokens.weight', 'lm_head.weight'], \
+31	                f'{name} dimension mismatch: {param.data.shape} vs {base.state_dict()[name].shape}'
+32	            bparam = base.state_dict()[name]
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project3/gllava/model/builder.py:58:38
+57	            if os.path.exists(os.path.join(model_path, 'non_lora_trainables.bin')):
+58	                non_lora_trainables = torch.load(os.path.join(model_path, 'non_lora_trainables.bin'), map_location='cpu')
+59	            else:
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project3/gllava/model/builder.py:67:27
+66	                        subfolder=subfolder)
+67	                    return torch.load(cache_file, map_location='cpu')
+68	                non_lora_trainables = load_from_hf(model_path, 'non_lora_trainables.bin')
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project3/gllava/model/builder.py:74:35
+73	            print('Loading mm projector weights...')
+74	            mm_projector_weights = torch.load(os.path.join(model_base, 'mm_projector.bin'), map_location='cpu')
+75	            mm_projector_weights = {k: v.to(torch.float16) for k, v in mm_projector_weights.items()}
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project3/gllava/model/builder.py:97:35
+96	
+97	            mm_projector_weights = torch.load(os.path.join(model_path, 'mm_projector.bin'), map_location='cpu')
+98	            mm_projector_weights = {k: v.to(torch.float16) for k, v in mm_projector_weights.items()}
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '<pad>'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/adapt_tokenizer.py:19:30
+18	        tokenizer.add_tokens('<pad>', special_tokens=True)
+19	        tokenizer.pad_token = '<pad>'
+20	        assert tokenizer.pad_token_id is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/adapt_tokenizer.py:20:8
+19	        tokenizer.pad_token = '<pad>'
+20	        assert tokenizer.pad_token_id is not None
+21	    sentinels = ''.join([f'<extra_id_{i}>' for i in range(NUM_SENTINEL_TOKENS)])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:332:4
+331	    (_, seqlen_k, _, _) = k.shape
+332	    assert k.shape == (batch, seqlen_k, nheads, d)
+333	    assert v.shape == (batch, seqlen_k, nheads, d)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:333:4
+332	    assert k.shape == (batch, seqlen_k, nheads, d)
+333	    assert v.shape == (batch, seqlen_k, nheads, d)
+334	    assert d <= 128, 'FlashAttention only support head dimensions up to 128'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:334:4
+333	    assert v.shape == (batch, seqlen_k, nheads, d)
+334	    assert d <= 128, 'FlashAttention only support head dimensions up to 128'
+335	    assert q.dtype == k.dtype == v.dtype, 'All tensors must have the same type'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:335:4
+334	    assert d <= 128, 'FlashAttention only support head dimensions up to 128'
+335	    assert q.dtype == k.dtype == v.dtype, 'All tensors must have the same type'
+336	    assert q.dtype in [torch.float16, torch.bfloat16], 'Only support fp16 and bf16'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:336:4
+335	    assert q.dtype == k.dtype == v.dtype, 'All tensors must have the same type'
+336	    assert q.dtype in [torch.float16, torch.bfloat16], 'Only support fp16 and bf16'
+337	    assert q.is_cuda and k.is_cuda and v.is_cuda
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:337:4
+336	    assert q.dtype in [torch.float16, torch.bfloat16], 'Only support fp16 and bf16'
+337	    assert q.is_cuda and k.is_cuda and v.is_cuda
+338	    softmax_scale = softmax_scale or 1.0 / math.sqrt(d)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:342:8
+341	    if has_bias:
+342	        assert bias.dtype in [q.dtype, torch.float]
+343	        assert bias.is_cuda
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:343:8
+342	        assert bias.dtype in [q.dtype, torch.float]
+343	        assert bias.is_cuda
+344	        assert bias.dim() == 4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:344:8
+343	        assert bias.is_cuda
+344	        assert bias.dim() == 4
+345	        if bias.stride(-1) != 1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:371:4
+370	    (_, seqlen_k, _, _) = k.shape
+371	    assert d <= 128
+372	    seqlen_q_rounded = math.ceil(seqlen_q / 128) * 128
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:373:4
+372	    seqlen_q_rounded = math.ceil(seqlen_q / 128) * 128
+373	    assert lse.shape == (batch, nheads, seqlen_q_rounded)
+374	    assert q.stride(-1) == k.stride(-1) == v.stride(-1) == o.stride(-1) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:374:4
+373	    assert lse.shape == (batch, nheads, seqlen_q_rounded)
+374	    assert q.stride(-1) == k.stride(-1) == v.stride(-1) == o.stride(-1) == 1
+375	    assert dq.stride(-1) == dk.stride(-1) == dv.stride(-1) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:375:4
+374	    assert q.stride(-1) == k.stride(-1) == v.stride(-1) == o.stride(-1) == 1
+375	    assert dq.stride(-1) == dk.stride(-1) == dv.stride(-1) == 1
+376	    softmax_scale = softmax_scale or 1.0 / math.sqrt(d)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:385:8
+384	    if has_bias:
+385	        assert bias.dtype in [q.dtype, torch.float]
+386	        assert bias.is_cuda
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:386:8
+385	        assert bias.dtype in [q.dtype, torch.float]
+386	        assert bias.is_cuda
+387	        assert bias.dim() == 4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:387:8
+386	        assert bias.is_cuda
+387	        assert bias.dim() == 4
+388	        assert bias.stride(-1) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:388:8
+387	        assert bias.dim() == 4
+388	        assert bias.stride(-1) == 1
+389	        if bias.shape[2:] == (1, seqlen_k):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:421:8
+420	        (qkv, o, lse, bias) = ctx.saved_tensors
+421	        assert not ctx.needs_input_grad[1], 'FlashAttention does not support bias gradient yet'
+422	        with torch.inference_mode():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:449:12
+448	        if len(ctx.needs_input_grad) >= 3:
+449	            assert not ctx.needs_input_grad[2], 'FlashAttention does not support bias gradient yet'
+450	        with torch.inference_mode():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/flash_attn_triton.py:477:8
+476	        (q, k, v, o, lse, bias) = ctx.saved_tensors
+477	        assert not ctx.needs_input_grad[3], 'FlashAttention does not support bias gradient yet'
+478	        with torch.inference_mode():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:42:4
+41	        return model
+42	    assert isinstance(model, _SUPPORTED_GPT_MODELS)
+43	    assert model.config.add_cross_attention == False, 'Only supports GPT-style decoder-only models'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:43:4
+42	    assert isinstance(model, _SUPPORTED_GPT_MODELS)
+43	    assert model.config.add_cross_attention == False, 'Only supports GPT-style decoder-only models'
+44	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:81:8
+80	            return call_og_forward()
+81	        assert isinstance(bidirectional_mask, torch.Tensor)
+82	        attn_modules = _get_attn_modules(model)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:87:8
+86	            raise ValueError(f'bidirectional_mask sequence length (={s}) exceeds the ' + f'max length allowed by the model ({max_length}).')
+87	        assert s <= max_length
+88	        if s < max_length:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:123:4
+122	        return model
+123	    assert isinstance(model, BloomForCausalLM)
+124	    assert model.config.add_cross_attention == False, 'Only supports BLOOM decoder-only models'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:124:4
+123	    assert isinstance(model, BloomForCausalLM)
+124	    assert model.config.add_cross_attention == False, 'Only supports BLOOM decoder-only models'
+125	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:133:16
+132	            if bidirectional_mask is not None:
+133	                assert attention_mask.shape == bidirectional_mask.shape
+134	                expanded_bidirectional_mask = _expand_mask_bloom(bidirectional_mask, tgt_length=src_length)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:279:4
+278	        return model
+279	    assert isinstance(model, OPTForCausalLM)
+280	    assert model.config.add_cross_attention == False, 'Only supports OPT decoder-only models'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:280:4
+279	    assert isinstance(model, OPTForCausalLM)
+280	    assert model.config.add_cross_attention == False, 'Only supports OPT decoder-only models'
+281	    setattr(model, '_original_forward', getattr(model, 'forward'))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/hf_prefixlm_converter.py:294:20
+293	                if self.bidirectional_mask is not None:
+294	                    assert attention_mask.shape == self.bidirectional_mask.shape
+295	                    expanded_bidirectional_mask = _expand_mask_opt(self.bidirectional_mask, inputs_embeds.dtype, tgt_len=input_shape[-1]).to(inputs_embeds.device)
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:24:0
+23	    from .flash_attn_triton import flash_attn_func
+24	except:
+25	    pass
+26	Tokenizer = Union[PreTrainedTokenizer, PreTrainedTokenizerFast]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:100:12
+99	        if self.prefix_lm:
+100	            assert isinstance(attn_bias, torch.Tensor)
+101	            assert isinstance(prefix_mask, torch.Tensor)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:101:12
+100	            assert isinstance(attn_bias, torch.Tensor)
+101	            assert isinstance(prefix_mask, torch.Tensor)
+102	            attn_bias = self._apply_prefix_mask(attn_bias, prefix_mask)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:104:12
+103	        if self.attn_uses_sequence_id and sequence_id is not None:
+104	            assert isinstance(attn_bias, torch.Tensor)
+105	            attn_bias = self._apply_sequence_id(attn_bias, sequence_id)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:167:12
+166	            S = input_ids.size(1)
+167	            assert S <= self.config.max_seq_len, f'Cannot forward input with seq_len={S}, this model only supports seq_len<={self.config.max_seq_len}'
+168	            tok_emb = self.wte(input_ids)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:170:12
+169	        else:
+170	            assert inputs_embeds is not None
+171	            assert self.alibi, 'inputs_embeds is not implemented for MPT unless for alibi.'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:171:12
+170	            assert inputs_embeds is not None
+171	            assert self.alibi, 'inputs_embeds is not implemented for MPT unless for alibi.'
+172	            S = inputs_embeds.size(1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:195:12
+194	            x_shrunk = x * self.embedding_fraction + x.detach() * (1 - self.embedding_fraction)
+195	            assert isinstance(self.emb_drop, nn.Module)
+196	            x = self.emb_drop(x_shrunk)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:204:16
+203	            if output_hidden_states:
+204	                assert all_hidden_states is not None
+205	                all_hidden_states = all_hidden_states + (x,)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:214:16
+213	            if output_attentions:
+214	                assert all_self_attns is not None
+215	                all_self_attns = all_self_attns + (attn_weights,)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/modeling_mpt.py:218:12
+217	        if output_hidden_states:
+218	            assert all_hidden_states is not None
+219	            all_hidden_states = all_hidden_states + (x,)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/param_init_fns.py:92:12
+91	        if module._qkv_same_embed_dim:
+92	            assert module.in_proj_weight is not None
+93	            assert module.q_proj_weight is None and module.k_proj_weight is None and (module.v_proj_weight is None)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/param_init_fns.py:93:12
+92	            assert module.in_proj_weight is not None
+93	            assert module.q_proj_weight is None and module.k_proj_weight is None and (module.v_proj_weight is None)
+94	            assert d_model is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/param_init_fns.py:94:12
+93	            assert module.q_proj_weight is None and module.k_proj_weight is None and (module.v_proj_weight is None)
+94	            assert d_model is not None
+95	            _d = d_model
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/param_init_fns.py:100:12
+99	        else:
+100	            assert module.q_proj_weight is not None and module.k_proj_weight is not None and (module.v_proj_weight is not None)
+101	            assert module.in_proj_weight is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/language_model/mpt/param_init_fns.py:101:12
+100	            assert module.q_proj_weight is not None and module.k_proj_weight is not None and (module.v_proj_weight is not None)
+101	            assert module.in_proj_weight is None
+102	            init_fn_(module.q_proj_weight)
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project3/gllava/model/llava_arch.py:78:35
+77	        if pretrain_mm_mlp_adapter is not None:
+78	            mm_projector_weights = torch.load(pretrain_mm_mlp_adapter, map_location='cpu')
+79	            def get_w(weights, keyword):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/llava_arch.py:139:16
+138	                cur_new_labels = []
+139	                assert cur_labels.shape == cur_input_ids.shape
+140	            while image_token_indices.numel() > 0:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/llava_arch.py:205:16
+204	                attention_mask = torch.stack(new_attention_mask, dim=0)
+205	                assert attention_mask.shape == new_labels.shape
+206	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/llava_arch.py:214:16
+213	                attention_mask = torch.cat((new_attn_mask_pad_left, attention_mask), dim=1)
+214	                assert attention_mask.shape == new_input_embeds.shape[:2]
+215	
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project3/gllava/model/llava_arch.py:246:39
+245	            if model_args.pretrain_mm_mlp_adapter:
+246	                mm_projector_weights = torch.load(model_args.pretrain_mm_mlp_adapter, map_location='cpu')
+247	                embed_tokens_weight = mm_projector_weights['model.embed_tokens.weight']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/llava_arch.py:248:16
+247	                embed_tokens_weight = mm_projector_weights['model.embed_tokens.weight']
+248	                assert num_new_tokens == 2
+249	                if input_embeddings.shape == embed_tokens_weight.shape:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/make_delta.py:25:12
+24	        if name not in base.state_dict():
+25	            assert name in ['model.mm_projector.weight', 'model.mm_projector.bias'], f'{name} not in base model'
+26	            continue
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/make_delta.py:30:12
+29	        else:
+30	            assert name in ['model.embed_tokens.weight', 'lm_head.weight'], f'{name} dimension mismatch: {param.data.shape} vs {base.state_dict()[name].shape}'
+31	            bparam = base.state_dict()[name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/utils.py:7:8
+6	    if 'llava' in config and 'llava' not in cfg.model_type:
+7	        assert cfg.model_type == 'llama'
+8	        print("You are using newer LLaVA code base, while the checkpoint of v0 is from older code base.")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/model/utils.py:13:12
+12	            print("Upgrading checkpoint...")
+13	            assert len(cfg.architectures) == 1
+14	            setattr(cfg.__class__, "model_type", "llava")
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/cli.py:20:19
+19	    if image_file.startswith('http://') or image_file.startswith('https://'):
+20	        response = requests.get(image_file)
+21	        image = Image.open(BytesIO(response.content)).convert('RGB')
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/cli_geo.py:21:19
+20	    if image_file.startswith('http://') or image_file.startswith('https://'):
+21	        response = requests.get(image_file)
+22	        image = Image.open(BytesIO(response.content)).convert('RGB')
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/gradio_web_server.py:39:10
+38	def get_model_list():
+39	    ret = requests.post(args.controller_url + "/refresh_all_workers")
+40	    assert ret.status_code == 200
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/serve/gradio_web_server.py:40:4
+39	    ret = requests.post(args.controller_url + "/refresh_all_workers")
+40	    assert ret.status_code == 200
+41	    ret = requests.post(args.controller_url + "/list_models")
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/gradio_web_server.py:41:10
+40	    assert ret.status_code == 200
+41	    ret = requests.post(args.controller_url + "/list_models")
+42	    models = ret.json()["models"]
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/gradio_web_server.py:200:10
+199	    controller_url = args.controller_url
+200	    ret = requests.post(controller_url + "/get_worker_address",
+201	            json={"model": model_name})
+202	    worker_addr = ret.json()["address"]
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: cloned_repos/project3/gllava/serve/gradio_web_server.py:215:22
+214	    all_images = state.get_images(return_pil=True)
+215	    all_image_hash = [hashlib.md5(image.tobytes()).hexdigest() for image in all_images]
+216	    for image, hash in zip(all_images, all_image_hash):
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b104_hardcoded_bind_all_interfaces.html
+   Location: cloned_repos/project3/gllava/serve/gradio_web_server.py:447:52
+446	    parser = argparse.ArgumentParser()
+447	    parser.add_argument("--host", type=str, default="0.0.0.0")
+448	    parser.add_argument("--port", type=int)
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/model_worker.py:84:12
+83	        }
+84	        r = requests.post(url, json=data)
+85	        assert r.status_code == 200
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/serve/model_worker.py:85:8
+84	        r = requests.post(url, json=data)
+85	        assert r.status_code == 200
+86	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/register_worker.py:25:8
+24	    }
+25	    r = requests.post(url, json=data)
+26	    assert r.status_code == 200
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/serve/register_worker.py:26:4
+25	    r = requests.post(url, json=data)
+26	    assert r.status_code == 200
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/test_message.py:14:14
+13	        controller_addr = args.controller_address
+14	        ret = requests.post(controller_addr + "/refresh_all_workers")
+15	        ret = requests.post(controller_addr + "/list_models")
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/test_message.py:15:14
+14	        ret = requests.post(controller_addr + "/refresh_all_workers")
+15	        ret = requests.post(controller_addr + "/list_models")
+16	        models = ret.json()["models"]
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/test_message.py:20:14
+19	
+20	        ret = requests.post(controller_addr + "/get_worker_address",
+21	            json={"model": args.model_name})
+22	        worker_addr = ret.json()["address"]
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: cloned_repos/project3/gllava/serve/test_message.py:40:15
+39	    }
+40	    response = requests.post(worker_addr + "/worker_generate_stream", headers=headers,
+41	            json=pload, stream=True)
+42	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/llava_trainer.py:62:4
+61	    # We need to use torch for the random part as a distributed sampler will set the random seed for torch.
+62	    assert all(l != 0 for l in lengths), "Should not have zero length."
+63	    if all(l > 0 for l in lengths) or all(l < 0 for l in lengths):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:366:12
+365	            role = roles[sentence["from"]]
+366	            assert role == conv.roles[j % 2], f"{i}"
+367	            conv.append_message(role, sentence["value"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:385:4
+384	
+385	    assert conv.sep_style == conversation_lib.SeparatorStyle.LLAMA_2
+386	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:448:12
+447	            role = roles[sentence["from"]]
+448	            assert role == conv.roles[j % 2], f"{i}"
+449	            conv.append_message(role, sentence["value"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:467:4
+466	
+467	    assert conv.sep_style == conversation_lib.SeparatorStyle.TWO
+468	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:529:12
+528	            role = roles[sentence["from"]]
+529	            assert role == conv.roles[j % 2], f"{i}"
+530	            conv.append_message(role, sentence["value"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:536:4
+535	    targets = input_ids.clone()
+536	    assert conv.sep_style == conversation_lib.SeparatorStyle.MPT
+537	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:585:8
+584	    for source in sources:
+585	        assert len(source) == 2
+586	        assert DEFAULT_IMAGE_TOKEN in source[0]['value']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:586:8
+585	        assert len(source) == 2
+586	        assert DEFAULT_IMAGE_TOKEN in source[0]['value']
+587	        source[0]['value'] = DEFAULT_IMAGE_TOKEN
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/train/train.py:659:21
+658	    # Random rotation angle between 0 and 359 degrees
+659	    rotation_angle = random.randint(0, 359)
+660	    translation_ratio = data_args.translation_ratio
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/train/train.py:664:19
+663	    # max_translation = max(image.width, image.height) // 2
+664	    translation = (random.randint(-max_translation, max_translation),
+665	                   random.randint(-max_translation, max_translation))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/train/train.py:665:19
+664	    translation = (random.randint(-max_translation, max_translation),
+665	                   random.randint(-max_translation, max_translation))
+666	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train.py:720:8
+719	            sources = [sources]
+720	        assert len(sources) == 1, "Don't know why it is wrapped to a list"  # FIXME
+721	        if 'image' in sources[0]:
+
+--------------------------------------------------
+>> Issue: [B106:hardcoded_password_funcarg] Possible hardcoded password: '[PAD]'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b106_hardcoded_password_funcarg.html
+   Location: cloned_repos/project3/gllava/train/train.py:919:36
+918	            smart_tokenizer_and_embedding_resize(
+919	                special_tokens_dict=dict(pad_token="[PAD]"),
+920	                tokenizer=tokenizer,
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:361:12
+360	            role = roles[sentence["from"]]
+361	            assert role == conv.roles[j % 2], f"{i}"
+362	            conv.append_message(role, sentence["value"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:380:4
+379	
+380	    assert conv.sep_style == conversation_lib.SeparatorStyle.LLAMA_2
+381	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:443:12
+442	            role = roles[sentence["from"]]
+443	            assert role == conv.roles[j % 2], f"{i}"
+444	            conv.append_message(role, sentence["value"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:462:4
+461	
+462	    assert conv.sep_style == conversation_lib.SeparatorStyle.TWO
+463	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:524:12
+523	            role = roles[sentence["from"]]
+524	            assert role == conv.roles[j % 2], f"{i}"
+525	            conv.append_message(role, sentence["value"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:531:4
+530	    targets = input_ids.clone()
+531	    assert conv.sep_style == conversation_lib.SeparatorStyle.MPT
+532	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:580:8
+579	    for source in sources:
+580	        assert len(source) == 2
+581	        assert DEFAULT_IMAGE_TOKEN in source[0]['value']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:581:8
+580	        assert len(source) == 2
+581	        assert DEFAULT_IMAGE_TOKEN in source[0]['value']
+582	        source[0]['value'] = DEFAULT_IMAGE_TOKEN
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/train/train_bak.py:654:21
+653	    # Random rotation angle between 0 and 359 degrees
+654	    rotation_angle = random.randint(0, 359)
+655	    translation_ratio = data_args.translation_ratio
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/train/train_bak.py:659:19
+658	    # max_translation = max(image.width, image.height) // 2
+659	    translation = (random.randint(-max_translation, max_translation),
+660	                   random.randint(-max_translation, max_translation))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: cloned_repos/project3/gllava/train/train_bak.py:660:19
+659	    translation = (random.randint(-max_translation, max_translation),
+660	                   random.randint(-max_translation, max_translation))
+661	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:708:12
+707	                cur_len = sum(len(conv['value'].split()) for conv in sample['conversations'])
+708	            except:
+709	                pass
+710	            cur_len = cur_len if 'image' in sample else -cur_len
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:718:8
+717	            sources = [sources]
+718	        assert len(sources) == 1, "Don't know why it is wrapped to a list"  # FIXME
+719	        if 'image' in sources[0]:
+
+--------------------------------------------------
+>> Issue: [B106:hardcoded_password_funcarg] Possible hardcoded password: '[PAD]'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b106_hardcoded_password_funcarg.html
+   Location: cloned_repos/project3/gllava/train/train_bak.py:917:36
+916	            smart_tokenizer_and_embedding_resize(
+917	                special_tokens_dict=dict(pad_token="[PAD]"),
+918	                tokenizer=tokenizer,
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: cloned_repos/project3/gllava/utils_conv/conv_template.py:289:8
+288	    if not override:
+289	        assert (
+290	                template.name not in conv_templates
+291	        ), f"{template.name} has been registered."
+292	
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project3/scripts/extract_mm_projector.py:36:17
+35	        v = 'pytorch_model.bin'
+36	        for k in torch.load(os.path.join(args.model_path, v), map_location='cpu').keys():
+37	            if any(key_match in k for key_match in keys_to_match):
+
+--------------------------------------------------
+>> Issue: [B614:pytorch_load] Use of unsafe PyTorch load
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b614_pytorch_load.html
+   Location: cloned_repos/project3/scripts/extract_mm_projector.py:43:15
+42	    for ckpt_name, weight_keys in ckpt_to_key.items():
+43	        ckpt = torch.load(os.path.join(args.model_path, ckpt_name), map_location='cpu')
+44	        for k in weight_keys:
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 9517
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 109
+		Medium: 21
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 12
+		Medium: 8
+		High: 111
+Files skipped (0):

@@ -1,0 +1,8 @@
+TruffleHog Analysis Report for project1
+============================================================
+Total secrets detected: 0
+
+No secrets found.
+
+Observations:
+TruffleHog may produce false positives. Manually verify the findings.
