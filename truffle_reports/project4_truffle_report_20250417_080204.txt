@@ -1,0 +1,5 @@
+TruffleHog Analysis Report for project4
+============================================================
+Total secrets detected: 0
+
+No secrets found.

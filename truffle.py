@@ -2,17 +2,32 @@
 import os
 import subprocess
 import json
+import shutil
 from datetime import datetime
 
 # Dictionary with your project repository URLs.
 repos = {
-    # "project1": "https://github.com/docling-project/docling.git",
-    # "project2": "https://github.com/openvla/openvla.git",
-    # "project3": "https://github.com/pipilurj/G-LLaVA.git",
-    # "project4": "https://github.com/facebookresearch/vggt.git",
-    # "project5": "https://github.com/Docta-ai/docta.git",
+    "project1": "https://github.com/docling-project/docling.git",
+    "project2": "https://github.com/openvla/openvla.git",
+    "project3": "https://github.com/pipilurj/G-LLaVA.git",
+    "project4": "https://github.com/facebookresearch/vggt.git",
+    "project5": "https://github.com/Docta-ai/docta.git",
     "project6": "https://github.com/vllm-project/vllm.git",
 }
+
+
+def locate_trufflehog():
+    """
+    Determine the correct TruffleHog command available in PATH.
+    Prefers trufflehog3, then trufflehog, then falls back to python -m.
+    """
+    if shutil.which("trufflehog3"):
+        return ["trufflehog3"]
+    if shutil.which("trufflehog"):
+        return ["trufflehog"]
+    # Fallback to module invocation
+    return [shutil.which("python3") or "python3", "-m", "trufflehog"]
+
 
 def clone_repo(repo_url, repo_dir):
     """
@@ -24,28 +39,31 @@ def clone_repo(repo_url, repo_dir):
         print(f"[INFO] Cloning {repo_url} into {repo_dir}")
         subprocess.run(["git", "clone", repo_url, repo_dir], check=True)
 
-def run_trufflehog(repo_dir):
+
+def run_trufflehog(repo_dir, truffle_cmd):
     """
-    Runs TruffleHog (v2.2) with --json output on the given repository directory.
+    Runs TruffleHog with JSON output on the given repository directory.
     Returns the raw stdout output.
     """
-    print(f"[INFO] Running TruffleHog on {repo_dir}")
+    cmd = truffle_cmd + ["--json", repo_dir]
+    print(f"[INFO] Running {' '.join(cmd)}")
     try:
         process = subprocess.run(
-            ["trufflehog", "--json", repo_dir],
+            cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            text=True
+            text=True,
+            check=False
         )
-
-# Optionally, print the return code:
-        if process.returncode != 0:
+        if process.returncode not in (0, 1):
+            # TruffleHog returns 1 if secrets found; >1 indicates error
             print(f"[WARNING] TruffleHog exited with code {process.returncode}")
+            print(process.stderr)
         return process.stdout
-
-    except subprocess.CalledProcessError as e:
-        print(f"[ERROR] TruffleHog error for {repo_dir}:\n{e.stderr}")
+    except Exception as e:
+        print(f"[ERROR] Could not run TruffleHog: {e}")
         return ""
+
 
 def parse_trufflehog_output(output):
     """
@@ -61,11 +79,12 @@ def parse_trufflehog_output(output):
             secret = json.loads(line)
             secrets.append(secret)
         except json.JSONDecodeError:
-            # Skip lines that aren't valid JSON.
+            # Skip non‑JSON lines
             continue
     return secrets
 
-def generate_report(repo_name, secrets):
+
+def generate_report(repo_name, secrets, output_dir, timestamp):
     """
     Generates a text report containing the TruffleHog findings.
     """
@@ -75,7 +94,7 @@ def generate_report(repo_name, secrets):
         f"Total secrets detected: {len(secrets)}",
         ""
     ]
-    
+
     if secrets:
         for idx, secret in enumerate(secrets, start=1):
             report_lines.append(f"Secret #{idx}:")
@@ -83,49 +102,43 @@ def generate_report(repo_name, secrets):
             report_lines.append("-" * 40)
     else:
         report_lines.append("No secrets found.")
-    
-    # Optionally, include observations.
-    report_lines.append("\nObservations:")
-    report_lines.append("TruffleHog may produce false positives. Manually verify the findings.")
-    
-    return "\n".join(report_lines)
+
+    report_filename = os.path.join(
+        output_dir,
+        f"{repo_name}_truffle_report_{timestamp}.txt"
+    )
+    with open(report_filename, "w") as f:
+        f.write("\n".join(report_lines))
+
+    print(f"[INFO] Report saved to {report_filename}")
+
 
 def main():
-    # Directories for cloned repositories and analysis reports.
     base_clone_dir = "cloned_repos"
     output_dir = "truffle_reports"
-    
-    # Create directories if they don't exist.
     os.makedirs(base_clone_dir, exist_ok=True)
     os.makedirs(output_dir, exist_ok=True)
-    
-    # Use a timestamp string to create unique report filenames.
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    
+    truffle_cmd = locate_trufflehog()
+    print(f"[INFO] Using TruffleHog command: {' '.join(truffle_cmd)}")
+
     for repo_name, repo_url in repos.items():
         print("\n" + "=" * 80)
         print(f"[INFO] Processing repository: {repo_name}")
-        
-        # Clone the repository
+
         repo_dir = os.path.join(base_clone_dir, repo_name)
         try:
             clone_repo(repo_url, repo_dir)
         except subprocess.CalledProcessError as e:
-            print(f"[ERROR] Cloning failed for {repo_url}: {e}")
+            print(f"[ERROR] Cloning failed for {repo_name}: {e}")
             continue
-        
-        # Run TruffleHog on the repository directory.
-        truffle_output = run_trufflehog(repo_dir)
-        secrets = parse_trufflehog_output(truffle_output)
-        
-        # Generate a report for this repository.
-        report_text = generate_report(repo_name, secrets)
-        report_filename = os.path.join(output_dir, f"{repo_name}_truffle_report_{timestamp}.txt")
-        with open(report_filename, "w") as f:
-            f.write(report_text)
-        
-        print(f"[INFO] Completed analysis for {repo_name}.")
-        print(f"[INFO] Report saved to {report_filename}")
+
+        output = run_trufflehog(repo_dir, truffle_cmd)
+        secrets = parse_trufflehog_output(output)
+        generate_report(repo_name, secrets, output_dir, timestamp)
+
+    print("\n[INFO] All repositories processed.")
 
 if __name__ == "__main__":
     main()
